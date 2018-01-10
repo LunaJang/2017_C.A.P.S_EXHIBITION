@@ -1,9 +1,10 @@
 #pragma once
 #include <Vector>
+#include"Player.h"
 
 class Event {
 	// (파일의 내용을 그때그때 받아오는게 아니라 객체 생성 때 읽어와서 저장해놓고 써야할듯 ? )
-public:
+	int evtnum = 0;
 public:
 	Event();
 	int readEvtFile(State& currentState, int turn);
