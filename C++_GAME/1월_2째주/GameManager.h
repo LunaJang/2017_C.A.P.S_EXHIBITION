@@ -2,13 +2,17 @@
 
 #define MAX_TURN 5
 
-class GameManeger {
+class GameManager {
 	Player user;
+	Event evt;
+	Action act;
+	Ending end;
+
 	int turn;
+	bool alive;
 public:
 	// GameManager 생성자
-	GameManeger();
-	int getTurn();
+	GameManager();
 
 	// 사용자 이름 및 성별 설정
 	void startGame();

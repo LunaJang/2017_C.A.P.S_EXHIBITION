@@ -7,7 +7,12 @@
 
 using namespace std;
 
-void GameManeger::startGame() {
+GameManager::GameManager() {
+	turn = 0;
+	alive = true;
+}
+
+void GameManager::startGame() {
 	string sentence;
 	string newName;
 	bool newGender;
@@ -27,4 +32,27 @@ void GameManeger::startGame() {
 
 	return;
 };
+
+void GameManager::startGame() {
+	while (turn < MAX_TURN && alive) {
+		turn++;
+
+		// (안내문 출력)
+
+		vector <string> option;
+		vector <string> sentence;
+		int numOption;
+
+		act.makeAction(option, numOption);
+		act.doAction(sentence, UI::printOption(sentence, numOption), user.getCurrentState());
+		
+		evt.readEvtFile(user.getCurrentState(), turn);
+
+	}
+	return;
+}
+
+void GameManager::finishGame() {
+
+}
 
