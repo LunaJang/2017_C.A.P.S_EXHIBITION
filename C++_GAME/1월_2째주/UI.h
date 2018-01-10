@@ -13,5 +13,5 @@ public:
 	// 사용자로부터 string 값을 받아와 반환, 출력되는 것은 없음
 	// 주로 이름설정 등에 사용됨
 	// 입력가능한 문자열의 길이 제한해야함
-	static void setValue(string& newString); // .
+	static void setValue(string& newString); // 
 };
