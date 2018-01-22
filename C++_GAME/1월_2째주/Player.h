@@ -1,4 +1,6 @@
 #pragma once
+#include <string>
+using namespace std;
 
 #define MAX_SCORE 4.5
 #define MIN_SCORE 0.0
@@ -16,11 +18,12 @@
 #define FEMALE false
 
 class State {
+public:
 	double score;
 	int stress;
 	int popularity;
 
-public:
+
 };
 
 class Player {
