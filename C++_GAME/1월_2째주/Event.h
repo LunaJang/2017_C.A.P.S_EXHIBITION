@@ -1,28 +1,25 @@
 #pragma once
 #include <Vector>
 #include"Player.h"
+#include<cstdio>
+
+#define semester1 (turn >= 1 && turn <= 4)
+#define semester2 (turn >= 7 && turn <= 10)
+#define vacation (turn >=5 && turn <= 6)
+#define lover (love == 1)
+#define celebrity (pop >= 70)
+#define first (grade >= 4.4)
+#define sick (stress == 5)
 
 class Event {
-	// (파일의 내용을 그때그때 받아오는게 아니라 객체 생성 때 읽어와서 저장해놓고 써야할듯 ? )
-	int evtnum = 0;
+	string script;
+	int nof;
+	int nol;
 public:
-	Event();
-	int readEvtFile(State& currentState, int turn);
-	void makeEvt(State& currnetState, int turn, bool& alive);
-};
-
-class Action {
-	// (파일의 내용을 그때그때 받아오는게 아니라 객체 생성 때 읽어와서 저장해놓고 써야할듯 ? )
-public:
-	// action의 option과 개수 반환
-	//void makeAction(vector<string> option, int& num);
-	void makeAction(string option[], int& num);
-	// action의 결과로 출력될 문장과 선택된 action의 번호(selection), 변화시킬 state객체를 매개변수로 받음
-	//void doAction(vector<string> sentence, int selction, State& currentState);
-	void doAction(string sentence[], int selction, State& currentState);
-
-};
-
-class Ending{
-
+	ofstream write_file("test.txt");
+	ifstream read_file("test.txt");
+	FILE *fr;
+	string evtnum;
+	string makeEvt(State& currnetState, int turn, bool& alive);
+	
 };
