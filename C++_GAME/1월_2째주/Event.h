@@ -7,9 +7,11 @@
 #define semester2 (turn >= 7 && turn <= 10)
 #define vacation (turn >=5 && turn <= 6)
 #define lover (love == 1)
-#define celebrity (pop >= 70)
+#define celeb (popularity >= 70)
 #define first (grade >= 4.4)
 #define sick (stress == 5)
+#define freedom (stress <= 2)
+
 
 class Event {
 	string script;
