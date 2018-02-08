@@ -25,3 +25,19 @@ public:
 	string makeEvt(State& currnetState, int turn, bool& alive);
 	
 };
+
+class Action {
+public:
+	void makeAction(vector<string>& option, int& num);
+	void doAction(vector<string>& sentence, int selction, State& currentState);
+
+
+};
+
+
+
+
+
+
+
+
