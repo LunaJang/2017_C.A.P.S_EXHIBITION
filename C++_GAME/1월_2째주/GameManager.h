@@ -5,9 +5,7 @@
 class GameManager {
 	Player user;
 	Event evt;
-	Action act;
-	Ending end;
-
+	
 	int turn;
 	bool alive;
 public:

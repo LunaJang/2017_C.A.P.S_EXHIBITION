@@ -1,7 +1,8 @@
 #pragma once
 #include <Vector>
-#include"Player.h"
-#include<cstdio>
+#include "Player.h"
+#include <cstdio>
+#include <cstdlib>
 
 #define semester1 (turn >= 1 && turn <= 4)
 #define semester2 (turn >= 7 && turn <= 10)
@@ -17,6 +18,7 @@ class Event {
 	string script;
 	int nof;
 	int nol;
+	int end;
 public:
 	ofstream write_file("test.txt");
 	ifstream read_file("test.txt");

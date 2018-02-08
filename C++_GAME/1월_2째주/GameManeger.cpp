@@ -43,10 +43,7 @@ void GameManager::startGame() {
 		vector <string> sentence;
 		int numOption;
 
-		act.makeAction(option, numOption);
-		act.doAction(sentence, UI::printOption(sentence, numOption), user.getCurrentState());
-		
-		evt.readEvtFile(user.getCurrentState(), turn);
+		evt.makeEvt(user.getCurrentState(), turn, alive);
 
 	}
 	return;
