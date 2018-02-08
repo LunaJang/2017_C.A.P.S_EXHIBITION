@@ -4,3 +4,17 @@
 #include <vector>
 
 using namespace std;
+
+class Rank
+{
+	//랭킹:이름, 점수, 플레이한 시간
+	string Name;
+	int Score;
+	string PlayTime;
+
+public:
+	Rank();
+
+
+
+};
