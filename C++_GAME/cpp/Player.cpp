@@ -6,11 +6,11 @@ using namespace std;
 
 Player::Player()
 {
-	name = "seong";
-	gender = true;
-	currentState.popularity = 50;
-	currentState.grade = 3.0;
-	currentState.stress = 1;
+	name = "DEFAULT_NAME";
+	gender = MALE;
+	currentState.popularity = DEFAULT_POPULARITY;
+	currentState.grade = DEFAULT_GRADE;
+	currentState.stress = DEFAULT_STRESS;
 }
 
 string Player::getName()

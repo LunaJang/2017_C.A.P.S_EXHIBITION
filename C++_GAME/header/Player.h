@@ -2,12 +2,12 @@
 #include <string>
 using namespace std;
 
-#define MAX_grade 4.5
-#define MIN_grade 0.0
-#define DEFAULT_grade 3.0
+#define MAX_GRADE 4.5
+#define MIN_GRADE 0.0
+#define DEFAULT_GRADE 3.0
 
 #define MAX_STRESS 5
-#define MIN_STRESS 1
+#define MIN_STRESS 0
 #define DEFAULT_STRESS 1
 
 #define MAX_POPULARITY 100
@@ -16,6 +16,8 @@ using namespace std;
 
 #define MALE true
 #define FEMALE false
+
+#define DEFAULT_NAME seong
 
 class State {
 public:
