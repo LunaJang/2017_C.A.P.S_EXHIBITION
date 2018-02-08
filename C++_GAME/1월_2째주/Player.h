@@ -2,9 +2,9 @@
 #include <string>
 using namespace std;
 
-#define MAX_grade 4.5
-#define MIN_grade 0.0
-#define DEFAULT_grade 3.0
+#define MAX_SCORE 4.5
+#define MIN_SCORE 0.0
+#define DEFAULT_SCORE 3.0
 
 #define MAX_STRESS 5
 #define MIN_STRESS 1
@@ -19,12 +19,11 @@ using namespace std;
 
 class State {
 public:
-	double grade;
+	double score;
 	int stress;
 	int popularity;
-	void ChangeGrade(double amount);
-	void ChangeStress(int amount);
-	void ChangePopularity(int amount);
+
+
 };
 
 class Player {
@@ -45,7 +44,7 @@ public:
 
 	State& getCurrentState();
 	// 매개변수로 받은 값 만큼 currentState의 값 변화
-	void setCurrentState(double grade, int stress, int popularity);
+	void setCurrentState(double score, int stress, int popularity);
 
 	int getTurn();
 	void setTurn(int turn);

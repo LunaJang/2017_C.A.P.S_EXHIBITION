@@ -48,33 +48,3 @@ string Event::makeEvt(State& currnetState, int turn, bool& alive)
 		}
 	}
 }
-
-
-void Action::makeAction(vector<string>& option, int& num) //선택지를 만드는 함수, 선택지와 그 선택지의 개수를 반환해준다.
-{
-	if() //조건에 따라서 선택지가 바뀐다면 if로 하면 될것 같아요
-	{
-		option.push_back("집에 가기");
-		option.push_back("공부하기");
-		option.push_back("술 마시기");
-		num = 3;
-	}
-	else if () //
-	{
-		option.push_back("캡방 가기");
-		option.push_back("술 마시기");
-		option.push_back("술 마시기");
-		option.push_back("술 마시기");
-	}
-}
-
-
-void Action::doAction(vector<string>& sentence, int selction, State& currentState)
-{
-	if(selction ==1)
-	{
-		sentence.push_back("술을 마신당~");
-		currentState.popularity
-	}
-
-}
