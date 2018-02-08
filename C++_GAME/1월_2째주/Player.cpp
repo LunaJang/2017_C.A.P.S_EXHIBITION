@@ -9,7 +9,7 @@ Player::Player()
 	name = "seong";
 	gender = true;
 	currentState.popularity = 50;
-	currentState.score = 3.0;
+	currentState.grade = 3.0;
 	currentState.stress = 1;
 }
 
@@ -38,9 +38,9 @@ State & Player::getCurrentState()
 	return currentState;
 }
 
-void Player::setCurrentState(double score, int stress, int popularity)
+void Player::setCurrentState(double grade, int stress, int popularity)
 {
-	currentState.score = score;
+	currentState.grade = grade;
 	currentState.popularity = popularity;
 	currentState.stress = stress;
 
