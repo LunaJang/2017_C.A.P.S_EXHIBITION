@@ -23,13 +23,14 @@ using namespace std;
 #define manyF grade <= 1.7
 #define breaklove love == 1 && popularity <= 20 // 엔딩(한번이라도 충족되면 엔딩)
 
-#define sick stress == 5 // 충족 되어도 랜덤값 충족해야 엔딩
+#define dead stress == 5 // 충족 되어도 랜덤값 충족해야 엔딩
 
 #define donghwan special == true // 동환이벤트
 
 
 
 class Event {
+
 public:
 	vector < vector<string> > script;
 	vector <string> newone;
