@@ -20,10 +20,14 @@ using namespace std;
 #define DEFAULT_NAME seong
 
 class State {
-public:
+
 	double grade;
 	int stress;
 	int popularity;
+public:
+	void changeGrade(double amount);
+	void changeStress(int amount);
+	void changePopularity(int amount);
 
 
 };

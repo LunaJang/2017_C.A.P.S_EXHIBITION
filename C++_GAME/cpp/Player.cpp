@@ -46,7 +46,52 @@ void Player::setCurrentState(double grade, int stress, int popularity)
 
 }
 
-int main(void)
-{
 
+void State::changeGrade(double amount)
+{
+	if (amount >= 0 && (this->grade + amount) > MAX_GRADE)
+	{
+		this->grade = MAX_GRADE;
+	}
+	else if (amount < 0 && (this->grade - amount) < MIN_GRADE)
+	{
+		this->grade = MIN_GRADE;
+	}
+	else
+	{
+		this->grade = this->grade + amount;
+	}
+}
+
+void State::changePopularity(int amount)
+{
+	if (amount >= 0 && (this->popularity + amount) > MAX_POPULARITY)
+	{
+		this->popularity = MAX_POPULARITY;
+	}
+	else if (amount < 0 && (this->popularity - amount) < MIN_POPULARITY)
+	{
+		this->popularity = MIN_POPULARITY;
+	}
+	else
+	{
+		this->popularity = this->popularity + amount;
+	}
+
+}
+
+void State::changeStress(int amount)
+{
+	if (amount >= 0 && (this->stress + amount) > MAX_STRESS)
+	{
+		this->stress = MAX_STRESS;
+	}
+	else if (amount < 0 && (this->stress - amount) < MIN_STRESS)
+	{
+		this->stress = MIN_STRESS;
+	}
+	else
+	{
+		this->stress = this->stress + amount;
+	}
 }
