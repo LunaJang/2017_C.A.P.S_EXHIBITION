@@ -15,7 +15,7 @@ using namespace std;
 #define freedom stress <= 2
 #define first grade >= 4.3 && grade < 4.5 && stress == 3 && stress == 4
 #define celeb popularity >= 80 && grade >= 3.5
-#define outsider popularity <= 30 // 상태(끝날때 이 상태이면 엔딩)
+#define outsider popularity <= 30 // 상태(끝날때 이 상태이면 엔딩) >> 10턴까지 존버
 	
 #define monk stress == 0
 #define president popularity == 100
@@ -30,10 +30,12 @@ using namespace std;
 
 class Event {
 public:
-	vector < vector<string> > script;
-	vector <string> newone;
+	vector <string> option1;
+	vector <string> option2;
+	vector <vector <string>> script;
+	vector <string> scriptP;
+	void makeScript();
 	vector <string> makeEvt(State& currnetState,int& trun, bool& alive, int selection);
-	void Addscript(vector <string> newone);
 	
 };
 
@@ -41,10 +43,5 @@ class Action {
 public:
 	void makeAction(vector<string> &option, int &num);
 	void doAction(vector<string> &script, int selection, State &currentState);
-
-};
-
-class Script {
-	vector < vector<string> > script;
 
 };
