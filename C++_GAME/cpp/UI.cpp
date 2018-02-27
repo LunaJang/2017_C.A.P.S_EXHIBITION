@@ -3,7 +3,6 @@
 #include"UI.h"
 #include<vector>
 #include<conio.h> //getch
-#include <cstdlib> //system 빨간줄 뜨는 문제는 해결 안됨
 
 
 using namespace std;
@@ -14,7 +13,8 @@ int printOption(vector<string>&option, int num)
 {
 	int cursor = 0;
 	int arrow = NULL;
-	system("cls");
+	cin.clear();
+	cin.ignore(); //버퍼 비우기
 	while (arrow != 13)
 
 		do {
@@ -33,6 +33,7 @@ int printOption(vector<string>&option, int num)
 			if (arrow == 224) // 방향키 아스키코드 
 
 			{
+				int getch();//방향키를 누르자마자 인식, 빨간줄은 없어졌으나 맞는 방법인지는 모름
 				arrow = getch();
 				switch (arrow) {
 				case 72: //224 72 아래
@@ -52,6 +53,15 @@ int printOption(vector<string>&option, int num)
 		}
 }
 
+int printScript(vector<string>&scriptbox) //대화창 꾸미는거
+{
+	cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓";
+
+
+
+	cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"; //
+
+} //
 
 void print(vector <string>&sentence, int num)
 {
@@ -67,4 +77,4 @@ void setValue(string& newString)
 
 }
 
-//buffer 추후에 넣을 예정
+//함수를 헤더로, 조금 꾸밀필요 있음, 콘솔창 clear 해결, getch 대처할것 찾기, 선택하시겠습니까 문구
