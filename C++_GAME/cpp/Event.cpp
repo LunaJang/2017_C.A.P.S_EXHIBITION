@@ -2,18 +2,17 @@
 
 using namespace std;
 
-vector <string> Event::makeEvt(State& currnetState, int turn, bool& alive)
+vector <string>& Event::makeEvt(State& currnetState, int& turn, bool& alive, int selection)
 {
-	
+	if (semester1)
+	{
+		return script[0];
+	}
 }
 
-void Event::Addscript(vector <string> newone)
-{
-	script.push_back(newone);
-}
 
 
-void Action::makeAction(vector<string>&option, int &num)
+void Action::makeAction(vector<string>&option, int& turn, int& num)
 {
 	if (semester1)
 	{
@@ -32,7 +31,7 @@ void Action::makeAction(vector<string>&option, int &num)
 
 
 }
-void Action::doAction(vector<string>&script, int selection, State &currentState)
+void Action::doAction(vector<string>&script, int selection, State &currentState, int& turn)
 {
 	if (semester1)
 	{
@@ -51,7 +50,3 @@ void Action::doAction(vector<string>&script, int selection, State &currentState)
 
 
 }
-
-
-void makeAction(vector<string> &option, int &num);
-void doAction(vector<string> &script, int selection, State &currentState);

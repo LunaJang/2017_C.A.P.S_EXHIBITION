@@ -33,15 +33,14 @@ public:
 	vector <string> option1;
 	vector <string> option2;
 	vector <vector <string>> script;
-	vector <string> scriptP;
 	void makeScript();
-	vector <string> makeEvt(State& currnetState,int& trun, bool& alive, int selection);
+	vector <string>& makeEvt(State& currnetState,int& trun, bool& alive, int selection);
 	
 };
 
 class Action {
 public:
-	void makeAction(vector<string> &option, int &num);
-	void doAction(vector<string> &script, int selection, State &currentState);
+	void makeAction(vector<string>& option, int& trun, int& num);
+	void doAction(vector<string>& script, int selection, State& currentState, int& turn);
 
 };
