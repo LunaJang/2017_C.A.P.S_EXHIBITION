@@ -8,9 +8,9 @@ Player::Player()
 {
 	name = "DEFAULT_NAME";
 	gender = MALE;
-	currentState.popularity = DEFAULT_POPULARITY;
-	currentState.grade = DEFAULT_GRADE;
-	currentState.stress = DEFAULT_STRESS;
+	currentState.changePopularity(DEFAULT_POPULARITY);
+	currentState.changeGrade(DEFAULT_GRADE);
+	currentState.changeStress(DEFAULT_STRESS);
 }
 
 string Player::getName()
@@ -40,9 +40,9 @@ State & Player::getCurrentState()
 
 void Player::setCurrentState(double grade, int stress, int popularity)
 {
-	currentState.grade = grade;
-	currentState.popularity = popularity;
-	currentState.stress = stress;
+	currentState.changeGrade(grade);
+	currentState.changePopularity(popularity);
+	currentState.changeStress(stress);
 
 }
 
