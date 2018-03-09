@@ -1,10 +1,16 @@
 #pragma once
 #define WAITING_TIME 100
+#include<string>
+#include<vector>
+#include<conio.h> 
+#include<iostream>
 
 class UI {
 public:
 	// option 출력, 배열의 크기는 num에 저장
-	static int printOption(vector<string>&option, int num);
+	static int printOption(vector<string>&option, int num, int& cursor);
+
+	static bool changeCursor(int& cursor);
 
 	// sentence 출력, 배열의 크기는 num에 저장
 	// 함수 시작 시 콘솔 창 clear
@@ -16,5 +22,6 @@ public:
 	// 입력가능한 문자열의 길이 제한해야함
 	static void setValue(string& newString); // 
 
-	static int printScript(vector<string>&scriptbox);
+	static void printScript(vector<string>&scriptbox);
+	static int printScript(vector<string>&option, int num);
 };

@@ -5,7 +5,9 @@
 class GameManager {
 	Player user;
 	Event evt;
-	
+	Action act;
+	vector <string> scripts;
+	vector <string> menu_options;
 	int turn;
 	bool alive;
 public:

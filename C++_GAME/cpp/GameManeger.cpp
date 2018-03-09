@@ -10,6 +10,14 @@ using namespace std;
 GameManager::GameManager() {
 	turn = 0;
 	alive = true;
+
+	scripts.push_back("사용자의 이름을 입력하세요 (6자 이내) :");
+	scripts.push_back("이번달의 일정을 선택하세요");
+
+	menu_options.push_back("게임 시작");
+	menu_options.push_back("랭킹 확인");
+	menu_options.push_back("게임 종료");
+
 }
 
 void GameManager::startGame() {
@@ -17,35 +25,34 @@ void GameManager::startGame() {
 	string newName;
 	bool newGender;
 
-	// 이름 설정
 	do {
-		string temp = "사용자의 이름을 입력하세요 (6자 이내) :";
-		UI::print(temp);
+		UI::print(scripts[0]);
 		UI::setValue(newName);
 	} while (newName == "" && newName.size() > 6);
 	user.setName(newName);
-	// (안내문 출력)
-
-	// 성별 설정
-	// (안내문 및 성별 option 출력)
-	user.setGender(newGender);
-	// (안내문 출력)
 
 	return;
 };
 
-void GameManager::startGame() {
-	while (turn < MAX_TURN && alive) {
+void GameManager::playGame() {
+	// 시작멘트 출력
+	vector<string> temp;
+	UI::printScript(temp);
+
+	while (turn < MAX_TURN && alive) {		
 		turn++;
 
-		// (안내문 출력)
+		//액션 처리
+		int selection = UI::printScript(act.makeAction(), 3);
+		UI::printScript(act.doAction(selection, user.getCurrentState, turn));
 
-		vector <string> option;
-		vector <string> sentence;
-		int numOption;
+		//이벤트 처리
+		vector<string> evtScript;
+		if (evt.makeEvt(user.getCurrentState(), evtScript, turn, alive, selection)) {
+			UI::printScript(evtScript);
+		}
 
-		evt.makeEvt(user.getCurrentState(), turn, alive);
-
+		//엔딩 체크
 	}
 	return;
 }
