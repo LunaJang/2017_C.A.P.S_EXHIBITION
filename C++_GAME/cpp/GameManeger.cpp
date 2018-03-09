@@ -19,9 +19,10 @@ void GameManager::startGame() {
 
 	// 이름 설정
 	do {
-		// (안내문 출력)
+		string temp = "사용자의 이름을 입력하세요 (6자 이내) :";
+		UI::print(temp);
 		UI::setValue(newName);
-	} while (newName != "");
+	} while (newName == "" && newName.size() > 6);
 	user.setName(newName);
 	// (안내문 출력)
 

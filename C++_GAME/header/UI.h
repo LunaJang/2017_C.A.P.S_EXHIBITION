@@ -9,6 +9,7 @@ public:
 	// sentence 출력, 배열의 크기는 num에 저장
 	// 함수 시작 시 콘솔 창 clear
 	static void print(vector <string>&sentence);
+	static void print(string &sentence);
 
 	// 사용자로부터 string 값을 받아와 반환, 출력되는 것은 없음
 	// 주로 이름설정 등에 사용됨
