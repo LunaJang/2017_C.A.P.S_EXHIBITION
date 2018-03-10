@@ -1,13 +1,22 @@
 #pragma once
-
+#include <iostream>
+#include <string>
+#include "Event.h"
+#include "Player.h"
+#include "UI.h"
 #define MAX_TURN 5
 
 class GameManager {
 	Player user;
 	Event evt;
 	Action act;
-	vector <string> scripts;
-	vector <string> menu_options;
+	Ending end;
+
+	vector <string> mentions;
+	vector <string> menuOptions;
+	vector <string> actOptions;
+	vector <string> monthlyEvent;
+
 	int turn;
 	bool alive;
 public:
@@ -20,4 +29,5 @@ public:
 	void playGame();
 	// 게임 엔딩 관리
 	void finishGame();
+	void readyGame();
 };

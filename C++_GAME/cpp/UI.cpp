@@ -41,7 +41,7 @@ bool UI::changeCursor(int& cursor) {
 }
 
 // 옵션 출력
-int UI::printScript(vector<string>&option, int num) //대화창 꾸미는거
+int UI::printScript(int turn, string monthlyEvent, State& currentState, vector<string>&option, int num) //대화창 꾸미는거
 {
 	int cursor = 0;
 	int arrow = NULL;
@@ -59,12 +59,19 @@ int UI::printScript(vector<string>&option, int num) //대화창 꾸미는거
 } //80칸 영어 80, 한글 40 높이 20줄
 
 // 스크립트 출력
-void UI::printScript(vector<string>&scriptbox) //대화창 꾸미는거
+void UI::printScript(int turn, string monthlyEvent, State& currentState, vector<string>&scriptbox) //대화창 꾸미는거
 {
 	// 3줄씩 끊어서 벡터 생성, print로 출력
 	for(int i = 0; i< scriptbox.size();i+=3)
 	{
-		cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓";
+		cout << "[ " << turn + 1 << "월 ]" << endl;
+		cout << "[ " << monthlyEvent << " ]" << endl << endl;
+
+		cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━┓" << endl;
+		cout << " 학점\t" << currentState.
+		cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━┛" << endl;
+
+		cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓" << endl;
 
 		vector <string> currentSent;
 		for (int j = 0; j < 3; j++) {
@@ -73,7 +80,7 @@ void UI::printScript(vector<string>&scriptbox) //대화창 꾸미는거
 
 		print(currentSent);
 
-		cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"; //32칸
+		cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛" << endl; //32칸
 		
 		//아무키나 입력 들어오면 다음 페이지로
 		getch();

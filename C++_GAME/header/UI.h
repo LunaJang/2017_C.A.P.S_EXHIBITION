@@ -1,9 +1,10 @@
 #pragma once
 #define WAITING_TIME 100
-#include<string>
-#include<vector>
-#include<conio.h> 
-#include<iostream>
+#include <string>
+#include <vector>
+#include <conio.h> 
+#include "Player.h"
+#include <iostream>
 
 class UI {
 public:
@@ -22,6 +23,6 @@ public:
 	// 입력가능한 문자열의 길이 제한해야함
 	static void setValue(string& newString); // 
 
-	static void printScript(vector<string>&scriptbox);
-	static int printScript(vector<string>&option, int num);
+	static void printScript(int turn, string monthlyEvent, State& currentState, vector<string>&scriptbox);
+	static int printScript(int turn, string monthlyEvent, State& currentState, vector<string>&option, int num);
 };
