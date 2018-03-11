@@ -48,7 +48,6 @@ class Ending
 
 class Action {
 public:
-	void makeAction(State& currentState, int selection);
-	void doAction(vector<string>& script, int selection, State& currentState, int& turn);
+	void makeAction(vector<string>& script, int selection, State& currentState);
 
 };
