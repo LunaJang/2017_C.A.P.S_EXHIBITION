@@ -1,9 +1,10 @@
 #pragma once
 #include <Vector>
-#include "Player.h"
 #include <cstdio>
 #include <cstdlib>
 #include <string>
+#include "Script.h"
+
 using namespace std;
 
 #define start turn == 0
@@ -30,17 +31,24 @@ using namespace std;
 
 class Event {
 public:
-	vector <string> option1;
-	vector <string> option2;
-	vector <vector <string>> script;
-	void makeScript();
-	vector <string>& makeEvt(State& currnetState,int& trun, bool& alive, int selection);
+	bool evtact;
+	vector <string> evtScript;
+	vector <string> evtName;
+	bool makeEvt(State& currnetState, int trun, int selection, vector<string>& evtScript, string& evtName);
 	
+};
+
+class Ending
+{
+	bool endact;
+	vector <string> specialScript;
+	vector <string> normalScript;
+	bool makeEnding(State& currnetState, int selection, vector<string>& specialScript, vector<string>& normalScript, string& evtName);
 };
 
 class Action {
 public:
-	void makeAction(vector<string>& option, int& trun, int& num);
+	void makeAction(State& currentState, int selection);
 	void doAction(vector<string>& script, int selection, State& currentState, int& turn);
 
 };

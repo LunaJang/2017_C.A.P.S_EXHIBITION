@@ -1,13 +1,21 @@
 #include "Event.h"
-
+#include "Script.h"
 using namespace std;
 
-vector <string>& Event::makeEvt(State& currnetState, int& turn, bool& alive, int selection)
+bool Event::makeEvt(State& currnetState, int turn, int selection, vector<string>& script, string& evtName)
 {
+	addEvtscript();
+	evtScript = script1[0];
+
 	if (semester1)
 	{
-		return script[0];
+		
 	}
+}
+
+bool Ending::makeEnding(State & currnetState, int selection, vector<string>& specialScript, vector<string>& normalScript, string & evtName)
+{
+	
 }
 
 
@@ -31,6 +39,8 @@ void Action::makeAction(vector<string>&option, int& turn, int& num)
 
 
 }
+
+
 void Action::doAction(vector<string>&script, int selection, State &currentState, int& turn)
 {
 	if (semester1)
@@ -47,6 +57,5 @@ void Action::doAction(vector<string>&script, int selection, State &currentState,
 			currentState.changePopularity(3);
 		}
 	}
-
-
 }
+
