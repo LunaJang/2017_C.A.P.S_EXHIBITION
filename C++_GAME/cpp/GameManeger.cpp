@@ -30,7 +30,7 @@ GameManager::GameManager() {
 }
 
 void GameManager::readyGame() {
-	int selettion = UI::printOption();
+
 }
 
 void GameManager::startGame() {

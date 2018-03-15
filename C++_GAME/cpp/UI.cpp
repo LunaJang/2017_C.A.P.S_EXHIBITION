@@ -1,16 +1,17 @@
-
-#include"UI.h"//getch
+#include"UI.h"
 
 using namespace std;
+
+static void setValue(string& newString) {
+	cin >> newString;
+}
 
 // 옵션 출력
 int UI::printOption(vector<string>&option, int num, int& cursor)
 {
-	int arrow = NULL;
-
 	for (int i = 0; i < num; i++)
 	{
-		if (i == cursor) { cout << "  ▶"; }
+		if (i == cursor) { cout << "  ▶ "; }
 
 		else { cout << "    "; }
 
@@ -48,8 +49,17 @@ int UI::printScript(int turn, string monthlyEvent, State& currentState, vector<s
 
 	do
 	{
+		cout << "[ " << turn + 1 << "월 ]" << endl;
+		cout << "[ " << monthlyEvent << " ]" << endl << endl;
+
+		cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓" << endl;
+		cout << " 학점\t" << currentState.getGrade() << " \t/ " << MAX_GRADE;
+		cout << " 인기\t" << currentState.getPopularity() << " \t/ " << MAX_POPULARITY;
+		cout << " 인기\t" << currentState.getStress() << " \t/ " << MAX_STRESS;
+		cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛" << endl << endl;
+
 		cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓";
-		arrow = printOption(option, num, cursor);
+		printOption(option, num, cursor);
 		cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"; //32칸
 
 	} while (changeCursor(cursor));
@@ -61,15 +71,18 @@ int UI::printScript(int turn, string monthlyEvent, State& currentState, vector<s
 // 스크립트 출력
 void UI::printScript(int turn, string monthlyEvent, State& currentState, vector<string>&scriptbox) //대화창 꾸미는거
 {
+	system("cls");
 	// 3줄씩 끊어서 벡터 생성, print로 출력
 	for(int i = 0; i< scriptbox.size();i+=3)
 	{
 		cout << "[ " << turn + 1 << "월 ]" << endl;
 		cout << "[ " << monthlyEvent << " ]" << endl << endl;
 
-		cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━┓" << endl;
-		cout << " 학점\t" << currentState.
-		cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━┛" << endl;
+		cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓" << endl;
+		cout << " 학점\t" << currentState.getGrade() << " \t/ " << MAX_GRADE;
+		cout << " 인기\t" << currentState.getPopularity() << " \t/ " << MAX_POPULARITY;
+		cout << " 스트레스\t" << currentState.getStress() << " \t/ " << MAX_STRESS;
+		cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛" << endl << endl;
 
 		cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓" << endl;
 
@@ -87,6 +100,7 @@ void UI::printScript(int turn, string monthlyEvent, State& currentState, vector<
 	}
 } //80칸 영어 80, 한글 40 높이 20줄
 
+// printScript에서 출력
 void UI::print(vector <string>&sentence)
 {
 	//3줄씩 출력
@@ -106,25 +120,3 @@ void UI::print(string& sentence) {
 	cout << sentence << endl;
 	return;
 }
-
-void UI::setValue(string& newString)
-{
-	cin >> newString;
-	return;
-}
-
-
-
-//함수를 헤더로, 조금 꾸밀필요 있음, getch 대처할것 찾기, 선택하시겠습니까 문구
-//스크립트 왼쪽 위 날짜, 이름칸 학기랑 월
-//할일 정할때 스테이터스확인
-
-int main()
-{
-	printOption;
-	printScript;
-	print;
-}
-//배열을 vector로 교체 
-//string vector 임의로 넣어서 실험
-//
