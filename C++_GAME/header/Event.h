@@ -1,8 +1,4 @@
 #pragma once
-#include <Vector>
-#include <cstdio>
-#include <cstdlib>
-#include <string>
 #include "Script.h"
 
 using namespace std;
@@ -28,14 +24,20 @@ using namespace std;
 	
 #define donghwan special == true // 동환이벤트
 	
+void readScript()
+{
+	addEndscript();
+	addEvtscript();
+	addActscript();
+}
 
 class Event {
 public:
-	bool evtact;
+	bool evtact; // 실행여부
 	vector <string> evtScript;
-	vector <string> evtName;
-	bool makeEvt(State& currnetState, int trun, int selection, vector<string>& evtScript, string& evtName);
-	
+	string evtName;
+	bool makeEvt(State& currnetState, int turn, int selection, vector<string>& evtScript, string& evtName);
+	// 이벤트 실행여부 및 스크립트 바꾸기
 };
 
 class Ending
@@ -43,7 +45,8 @@ class Ending
 	bool endact;
 	vector <string> specialScript;
 	vector <string> normalScript;
-	bool makeEnding(State& currnetState, int selection, vector<string>& specialScript, vector<string>& normalScript, string& evtName);
+	string endName;
+	bool makeEnding(State& currnetState, int selection, vector<string>& specialScript, vector<string>& normalScript, string& endName);
 };
 
 class Action {
