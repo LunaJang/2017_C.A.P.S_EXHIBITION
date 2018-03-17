@@ -1,5 +1,7 @@
 #pragma once
+#include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
 #define MAX_GRADE 4.5
@@ -24,17 +26,19 @@ class State {
 	double grade;
 	int stress;
 	int popularity;
+	bool love;
 public:
 	void changeGrade(double amount);
 	void changeStress(int amount);
 	void changePopularity(int amount);
-
+	double getGrade();
+	int getStress();
+	int getPopularity();
 
 };
 
 class Player {
 	string name;
-	bool gender;
 	State currentState;
 
 public:
@@ -45,14 +49,9 @@ public:
 	string getName();
 	void setName(string name);
 
-	bool getGender();
-	void setGender(bool gender);
-
 	State& getCurrentState();
 	// 매개변수로 받은 값 만큼 currentState의 값 변화
 	void setCurrentState(double grade, int stress, int popularity);
 
-	int getTurn();
-	void setTurn(int turn);
 };
 

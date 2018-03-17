@@ -1,5 +1,6 @@
 #include "Event.h"
 #include "Script.h"
+
 using namespace std;
 
 bool Event::makeEvt(State& currnetState, int turn, int selection, vector<string>& script, string& evtName)
@@ -22,7 +23,7 @@ bool Ending::makeEnding(State& currnetState, int selection, vector<string>& spec
 }
 
 
-void Action::makeAction(vector<string>& script, int selection, State& currentState)
+void Action::makeAction(vector<string>& script, int selection, State& currentState, int turn)
 {
 		if (selection == 1)		//공부하기
 		{

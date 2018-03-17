@@ -1,6 +1,6 @@
 #pragma once
 #include "Script.h"
-
+#include "Player.h"
 using namespace std;
 
 #define start turn == 0
@@ -9,18 +9,18 @@ using namespace std;
 #define vacation turn >= 5 && turn <= 6 // 시점
 
 #define lover love == 1
-#define freedom stress <= 2
-#define first grade >= 4.3 && grade < 4.5 && stress == 3 && stress == 4
-#define celeb popularity >= 80 && grade >= 3.5
-#define outsider popularity <= 30 // 상태(끝날때 이 상태이면 엔딩) >> 10턴까지 존버
+#define freedom currnetState.getStress() <= 2
+#define first currnetState.getGrade() >= 4.3 && currnetState.getGrade() < 4.5 && currnetState.getStress() == 3 && currnetState.getStress() == 4
+#define celeb currnetState.getPopularity() >= 80 && currnetState.getGrade() >= 3.5
+#define outsider currnetState.getPopularity() <= 30 // 상태(끝날때 이 상태이면 엔딩) >> 10턴까지 존버
 	
-#define monk stress == 0
-#define president popularity == 100
-#define nobelpirze grade == 4.5
-#define manyF grade <= 1.7
-#define breaklove love == 1 && popularity <= 20 // 엔딩(한번이라도 충족되면 엔딩)
+#define monk currnetState.getStress() == 0
+#define president currnetState.getPopularity() == 100
+#define nobelprize currnetState.getGrade() == 4.5
+#define manyF currnetState.getGrade() <= 1.7
+#define breaklove love == 1 && getPopularity() <= 20 // 엔딩(한번이라도 충족되면 엔딩)
 	
-#define sick stress == 5 // 충족 되어도 랜덤값 충족해야 엔딩
+#define die getStress() == 5 // 충족 되어도 랜덤값 충족해야 엔딩
 	
 #define donghwan special == true // 동환이벤트
 	
@@ -51,6 +51,6 @@ class Ending
 
 class Action {
 public:
-	void makeAction(vector<string>& script, int selection, State& currentState);
+	void makeAction(vector<string>& script, int selection, State& currentState, int turn);
 
 };

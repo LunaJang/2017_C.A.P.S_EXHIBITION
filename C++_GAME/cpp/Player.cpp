@@ -1,13 +1,10 @@
 #include "Player.h"
-#include <iostream>
-#include <string>
-#include <vector>
+
 using namespace std;
 
 Player::Player()
 {
 	name = "DEFAULT_NAME";
-	gender = MALE;
 	currentState.changePopularity(DEFAULT_POPULARITY);
 	currentState.changeGrade(DEFAULT_GRADE);
 	currentState.changeStress(DEFAULT_STRESS);
@@ -21,16 +18,6 @@ string Player::getName()
 void Player::setName(string name)
 {
 	this->name = name;
-}
-
-bool Player::getGender()
-{
-	return gender;
-}
-
-void Player::setGender(bool gender)
-{
-	this->gender = gender;
 }
 
 State & Player::getCurrentState()
@@ -94,4 +81,19 @@ void State::changeStress(int amount)
 	{
 		this->stress = this->stress + amount;
 	}
+}
+
+double State::getGrade()
+{
+	return grade;
+}
+
+int State::getStress()
+{
+	return stress;
+}
+
+int State::getPopularity()
+{
+	return popularity;
 }

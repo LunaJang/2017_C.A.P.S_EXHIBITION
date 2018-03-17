@@ -28,7 +28,13 @@ vector <string> Ran2;
 vector <string> Ran3;
 
 vector <vector <string> > EndScript; // 엔딩용
-vector <string> Monk;	//script2[0]
+vector <string> Monk;				//EndScript[0]
+vector <string> Breaklove;			//EndScript[1]
+vector <string> ManyF;				//EndScript[2]
+vector <string> Nobelprize;			//EndScript[3]
+vector <string> Celeb;				//EndScript[4]
+vector <string> Die;				//EndScript[5]
+
 
 vector <vector <string> > ActScript; // 이벤트용
 vector <string> act1;
@@ -248,18 +254,132 @@ void addEndscript()
 
 	Monk.push_back("");
 	Monk.push_back("고요를 체험 하시오");
-	Monk.push_back("");
+	Monk.push_back("");							//젠00
 
 	Monk.push_back("나는 진리를 깨우쳤다!");
 	Monk.push_back("어디선가 후광이 비친다.");
 	Monk.push_back("저 멀리서 흰 코끼리가 나를 부른다….");
+	EndScript.push_back(Monk);
 
+
+	Breaklove.push_back("카톡!");
+	Breaklove.push_back("그 아이에게서 카톡이 왔다!");
+	Breaklove.push_back("");
+
+	Breaklove.push_back("");
+	Breaklove.push_back("우리 헤어지자");
+	Breaklove.push_back("");					//그아이?
+
+	Breaklove.push_back("……");
+	Breaklove.push_back("?!?!?!?!?!?!?!?!?");
+	Breaklove.push_back("다….답장을 해야해…!!!");
+
+	Breaklove.push_back("……");
+	Breaklove.push_back("카톡의 숫자가 사라지지 않는다.");
+	Breaklove.push_back("");
+
+	Breaklove.push_back("");
+	Breaklove.push_back("CC가 깨진 충격으로 나는 휴학을 하게 되었다.");
+	Breaklove.push_back("");
+
+	Breaklove.push_back("휴학계를 내러 가는 날, 보고 말았다.");
+	Breaklove.push_back("다른 사람의 손을 잡은 그 아이를…");
+	Breaklove.push_back("");
+	EndScript.push_back(Breaklove);
 	
 
+	ManyF.push_back("띵동");
+	ManyF.push_back("");
+	ManyF.push_back("학교에서 편지가 왔다");
 
-	EndScript.push_back(Monk);		
-	
-	
+	ManyF.push_back("동국대학교");
+	ManyF.push_back("성적경고처분통지서");
+	ManyF.push_back("");
+
+	ManyF.push_back("");
+	ManyF.push_back("손이 떨리기 시작한다.");
+	ManyF.push_back("");
+
+	ManyF.push_back("학점의 그레이드에 죽음의 데스가 오고 말았다.");
+	ManyF.push_back("내 학교 생활의 유니버시티 라이프는 ");
+	ManyF.push_back("디 엔드로 끝나는 것인가?");
+
+	ManyF.push_back("");
+	ManyF.push_back("아 씨바, 할말을 잊었습니다. ");
+	ManyF.push_back("");								//보광 or 엄마
+	EndScript.push_back(ManyF);
+
+	Nobelprize.push_back("공부는 너무 행복해!");
+	Nobelprize.push_back("오늘도 즐겁게 공부를 하자!");
+	Nobelprize.push_back("");
+
+	Nobelprize.push_back("어라? 이 공식은 좀 이상한걸?");
+	Nobelprize.push_back("코노 와타시가 연구 해 봐야겠다!");
+	Nobelprize.push_back("");
+
+	Nobelprize.push_back("얼마 후…");
+	Nobelprize.push_back("");
+	Nobelprize.push_back("");
+
+	Nobelprize.push_back("OOO씨!!");
+	Nobelprize.push_back("최연소 노벨상 수상자로 선정 되셨는데");
+	Nobelprize.push_back("소감 한 말씀 부탁 드립니다!");
+
+	Nobelprize.push_back("");
+	Nobelprize.push_back("혼자 공부하다 논문을 쓰셨다던데 사실입니까??");
+	Nobelprize.push_back("");
+
+	Nobelprize.push_back("야레야레…");
+	Nobelprize.push_back("그럼 한 마디만 하겠습니다.");
+	Nobelprize.push_back("");
+
+	Nobelprize.push_back("교과서만 보고 공부했습니다.");
+	Nobelprize.push_back("구글 갓! ");
+	Nobelprize.push_back("");
+	EndScript.push_back(Nobelprize);
+
+
+	Celeb.push_back("한참 놀고있는데 수상한 시선이 느껴졌다.");
+	Celeb.push_back("!!!!!!!!!");
+	Celeb.push_back("누군가 내 어깨를 잡았다!!!");
+
+	Celeb.push_back("자네….");						//[???]
+	Celeb.push_back("왕이 될 관상이야…!!!!");
+	Celeb.push_back("");
+
+	Celeb.push_back("네….?");
+	Celeb.push_back("제…제가요….?");
+	Celeb.push_back("");
+
+	Celeb.push_back("그래…. 바로…");
+	Celeb.push_back("연예계의 왕!!!!");
+	Celeb.push_back("");							//[???]
+
+	Celeb.push_back("몇 년 후….");
+	Celeb.push_back("");
+	Celeb.push_back("");
+
+	Celeb.push_back("이번 양훈의 숏터뷰에서는 ");
+	Celeb.push_back("만능 엔터테이너 OOO 님을 모셨습니다!!");
+	Celeb.push_back("OOO씨, 인기가 많으면 피곤하진 않으세요?");
+
+	Celeb.push_back("늘 새로워, 짜릿해");
+	Celeb.push_back("인기가 최고야");
+	Celeb.push_back("");
+
+	Celeb.push_back("어이가 없네…");
+	Celeb.push_back("");
+	Celeb.push_back("");
+	EndScript.push_back(Celeb);
+
+	Die.push_back("……………");
+	Die.push_back("……………");
+	Die.push_back("돌연사!!!!!!");
+
+	Die.push_back("학교 가기 싫어 사망");		//랜덤 어케 쓰지 여기서
+	Die.push_back("");
+	Die.push_back("");
+
 
 
 
