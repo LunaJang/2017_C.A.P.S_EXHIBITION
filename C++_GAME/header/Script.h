@@ -34,7 +34,6 @@ vector <string> ManyF;				//EndScript[2]
 vector <string> Nobelprize;			//EndScript[3]
 vector <string> Celeb;				//EndScript[4]
 vector <string> Die;				//EndScript[5]
-vector <string> Nomal;
 vector <string> Outside;
 vector <string> Leader;
 vector <string> Top;
@@ -43,6 +42,7 @@ vector <string> Sole;
 vector <string> Leave;
 vector <string> Peace;
 vector <string> Tr;
+vector <string> Nomal;
 
 vector <vector <string> > ActScript; // 이벤트용
 vector <string> act1;
@@ -610,6 +610,42 @@ void addEndscript()
 	Die.push_back("돌연사!!!!!!");
 
 	EndScript.push_back(Die);
+
+	Nomal.push_back("당신은 무사히 헌내기가 되었습니다.");
+	Nomal.push_back("");
+	Nomal.push_back("");
+
+	Outside.push_back("당신은 아무와도 만나지 않는 아싸가 되었습니다.");
+	Outside.push_back("");
+	Outside.push_back("");
+
+	Leader.push_back("당신은 사람들의 추천으로 과대가 되었습니다.");
+	Leader.push_back("");
+	Leader.push_back("");
+
+	Top.push_back("당신은 피나는 노력 끝에 과탑이 되었습니다.");
+	Top.push_back("장학금을 기대해봅시다.");
+	Top.push_back("");
+
+	Love.push_back("퉷퉷퉷");
+	Love.push_back("당신은 CC입니다.");
+	Love.push_back("CC의 결말은 파국입니다.");
+
+	Sole.push_back("커플 지옥! 솔로 천국!, 당신은 마법사가 되었습니다.");
+	Sole.push_back("");
+	Sole.push_back("");
+
+	Leave.push_back("당신은 일 년간 너무 힘든 시간을 보냈습니다.");
+	Leave.push_back("OOO은 자유의 몸이에요!");
+	Leave.push_back("당신은 휴학했습니다.");
+
+	Peace.push_back("당신은 자유로운 영혼입니다.");
+	Peace.push_back("양봉국 교수님도 학점도 당신을 구속하지 않습니다.");
+	Peace.push_back("");
+
+	Tr.push_back("지난 술자리에서 양복국 교수님께 실수한 후로");
+	Tr.push_back(" 교수님께 찍힌 상태입니다.");
+	Tr.push_back("");
 
 
 

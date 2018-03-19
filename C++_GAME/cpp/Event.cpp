@@ -91,6 +91,100 @@ bool Ending::makeEnding(State& currentState, int selection, vector<string>& spec
 			return true;
 		}
 	}
+	if (turn == 10)
+	{
+		int a = 1;
+		switch (a)
+		{
+		case 1:
+		{
+			if (currentState.getPopularity() < 20)
+			{
+				normalScript = Outside;
+				endName = "Outside";
+				a++;
+			}
+			a++;
+		}
+		case 2:	
+		{
+			if (currentState.getPopularity() > 70)
+			{
+				normalScript = Leader;
+				endName = "Leader";
+				a++;
+			}
+			a++;
+		}
+		case 3:
+		{
+			if (currentState.getGrade() > 4.2)
+			{
+				normalScript = Top;
+				endName = "Top";
+				a++;
+			}
+			a++;
+		}
+		case 4:
+		{
+			if (currentState.getLove() == true)
+			{
+				normalScript = Love;
+				endName = "Love";
+				a++;
+			}
+			a++;
+		}
+		case 5:
+		{
+			if (currentState.getLove() == false)
+			{
+				normalScript = Sole;
+				endName = "Sole";
+				a++;
+			}
+			a++;
+		}
+		case 6:
+		{
+			if (currentState.getStress() >= 4)
+			{
+				normalScript = Leave;
+				endName = "Leave";
+				a++;
+			}
+			a++;
+		}
+		case 7:
+		{
+			if (currentState.getStress() <= 2)
+			{
+				normalScript = Peace;
+				endName = "Peace";
+				a++;
+			}
+			a++;
+		}
+		case 8:
+		{
+			if (currentState.getTr() == true)
+			{
+				normalScript = Tr;
+				endName = "Tr";
+				a++;
+			}
+			a++;
+		}
+		case 9:
+		{
+			normalScript = Nomal;
+			endName = "Nomal";
+			return true;
+			break;
+		}
+		}
+	}
 
 	
 }
