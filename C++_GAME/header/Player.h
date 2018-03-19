@@ -26,7 +26,9 @@ class State {
 	double grade;
 	int stress;
 	int popularity;
+	int liver;
 	bool love;
+	bool tr;	//찍힘인데 변수이름을 뭘로 할지 모르겠어요...
 public:
 	void changeGrade(double amount);
 	void changeStress(int amount);
@@ -34,6 +36,12 @@ public:
 	double getGrade();
 	int getStress();
 	int getPopularity();
+	bool getLove();
+	void setLove(bool love);
+	bool getTr();
+	void setTr(bool tr);
+	int getLiver();
+	void setLiver(int liver);
 
 };
 

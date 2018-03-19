@@ -97,3 +97,33 @@ int State::getPopularity()
 {
 	return popularity;
 }
+
+bool State::getLove()
+{
+	return love;
+}
+
+void State::setLove(bool love)
+{
+	this->love = love;
+}
+
+bool State::getTr()
+{
+	return tr;
+}
+
+void State::setTr(bool tr)
+{
+	this->tr = tr;
+}
+
+int State::getLiver()
+{
+	return liver;
+}
+
+void State::setLiver(int liver)
+{
+	this->liver = liver;
+}
