@@ -105,7 +105,7 @@ void addEvtscript()
 	Fixed5.push_back("");
 	Fixed5.push_back("");
 
-	Fixed5.push_back("[선배] : 얘들아 고기 다 구웠다 먹자!");
+	Fixed5.push_back("조팡현 : 얘들아 고기 다 구웠다 먹자!");
 	Fixed5.push_back("");
 	Fixed5.push_back("");
 
@@ -113,7 +113,7 @@ void addEvtscript()
 	Fixed5.push_back("착석하고 많아 보이던 고기들을 순식간에 처리했다.");
 	Fixed5.push_back("");
 
-	Fixed5.push_back("[정통환] : 언제까지 어깨 춤을 추게 할거야~ 내 어깨를 봐! 탈골 됐잖아!");
+	Fixed5.push_back("정통환 : 언제까지 어깨 춤을 추게 할거야~ 내 어깨를 봐! 탈골 됐잖아!");
 	Fixed5.push_back("");
 	Fixed5.push_back("");
 
