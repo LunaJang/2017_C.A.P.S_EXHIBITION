@@ -2,12 +2,8 @@
 
 using namespace std;
 
-static void setValue(string& newString) {
-	cin >> newString;
-}
-
 // 옵션 출력
-int UI::printOption(vector<string>&option, int num, int& cursor)
+void UI::printOption(vector<string>&option, int num, int& cursor)
 {
 	for (int i = 0; i < num; i++)
 	{

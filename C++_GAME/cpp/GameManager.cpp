@@ -3,9 +3,9 @@
 using namespace std;
 
 GameManager::GameManager() {
-	turn = 0;
-	alive = true;
 
+	evt.setEvtScript(user.getName());
+	end.setEndScript(user.getName());
 	mentions.push_back("사용자의 이름을 입력하세요 (6자 이내) :");
 	mentions.push_back("이번달의 일정을 선택하세요");
 
@@ -30,7 +30,6 @@ GameManager::GameManager() {
 }
 
 void GameManager::readyGame() {
-	int selettion = UI::printOption();
 }
 
 void GameManager::startGame() {
@@ -39,40 +38,40 @@ void GameManager::startGame() {
 	bool newGender;
 
 	do {
-		UI::print(mentions[0]);
-		UI::setValue(newName);
-	} while (newName == "" && newName.size() > 6);
+		UI::print(mentions[0]); 
+		cin >> newName;
+	} while (newName == "" || newName.size() > 6);
 	user.setName(newName);
+
+	// 시작멘트 출력
+	vector<string> temp;
+	UI::printScript(turn, monthlyEvent[turn], user.getCurrentState(), temp);
 
 	return;
 };
 
 void GameManager::playGame() {
-	// 시작멘트 출력
-	vector<string> temp;
-	UI::printScript(turn, monthlyEvent[turn], user.getCurrentState, temp);
+	turn = 0;
+	alive = true;
 
 	while (turn < MAX_TURN && alive) {		
 		turn++;
 
 		//액션 처리
-		vector <string> actScript;
+		vector<string> actScript;
 		int selection = UI::printScript(turn, monthlyEvent[turn], user.getCurrentState(), actOptions, 3);
-		act.makeAction(user.getCurrentState(), actScript, selection);
+		act.makeAction(actScript, selection, user.getCurrentState());
 		UI::printScript(turn, monthlyEvent[turn], user.getCurrentState(), actScript);
 
 		//이벤트 처리
 		vector<string> evtScript;
-		string evtName;
-		if (evt.makeEvt(user.getCurrentState(), turn, selection, evtScript, evtName)) {
+		if (evt.makeEvt(user.getCurrentState(), turn, selection, evtScript)) {
 			UI::printScript(turn, monthlyEvent[turn], user.getCurrentState(), evtScript);
 		}
 
 		//엔딩 체크
-		vector<string> specialScript;
-		vector<string> normalScript;
-		string eName;
-		if (end.makeEnding(user.getCurrentState(), selection, specialScript, normalScript, evtName)) {
+		vector<string> endScript;
+		if (end.makeEnding(user.getCurrentState(), selection, endScript, turn)) {
 			UI::printScript(turn, monthlyEvent[turn], user.getCurrentState(), evtScript);
 			alive = false;
 		}

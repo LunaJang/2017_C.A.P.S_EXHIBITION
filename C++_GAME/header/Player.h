@@ -22,7 +22,6 @@ using namespace std;
 #define DEFAULT_NAME seong
 
 class State {
-
 	double grade;
 	int stress;
 	int popularity;
@@ -31,15 +30,20 @@ class State {
 	bool tr;	//찍힘인데 변수이름을 뭘로 할지 모르겠어요...
 public:
 	void changeGrade(double amount);
-	void changeStress(int amount);
-	void changePopularity(int amount);
 	double getGrade();
+	
+	void changeStress(int amount);
 	int getStress();
+
+	void changePopularity(int amount);
 	int getPopularity();
+
 	bool getLove();
 	void setLove(bool love);
+	
 	bool getTr();
 	void setTr(bool tr);
+	
 	int getLiver();
 	void setLiver(int liver);
 
