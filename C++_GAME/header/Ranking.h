@@ -7,20 +7,31 @@
 
 using namespace std;
 //점수계산함수, 랭킹계산함수
-//필요한 변수: 최종점수, 이름, 
+//필요한 변수: 최종점수
 class Scoring
 {
-	//랭킹: 이름, 점수, 플레이한 시간
-	string name;
+	//점수 
 	int score;
-	string PlayTime;
 
 public:
-	//Rank의 변수 초기화
+	//Scoring의 변수 초기화
 	Scoring();
 
-	//점수계산함수
-	void setScore(State& user ,double end);
+	//점수계산함수(스폐셜엔딩, 일반엔딩)
+	void setScore(State& user , string endname);//매개변수: 유저스텟, 달성한 스폐셜엔딩 이름
+	void setScore(State& user, bool love, int endNum);//매개변수: 유저스텟, 일반엔딩에서의 연애 여부(연애시 true), 달성한 노멀엔딩 개수
+
+	//점수 호출함수
 	int getScore();
+
+};
+
+class Rank
+{
+	string name;
+	int rank;
+
+public:
+
 
 };

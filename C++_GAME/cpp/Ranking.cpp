@@ -31,18 +31,75 @@
 100:   6점
 */
 
-
 using namespace std;
 
 Scoring::Scoring()
 {
-	Player user;
-	name = user.getName();
 	score = 0;
-	PlayTime = 0;
 }
 
-void Scoring::setScore(State& user, double end)
+//스폐셜엔딩시 점수계산
+void Scoring::setScore(State& user, string endname)
+{
+	//학점 점수
+	{
+		if (user.getGrade() < 2)
+			score = score + 1;
+		else if (user.getGrade() >= 2 && user.getGrade() < 3)
+			score = score + 2;
+		else if (user.getGrade() >= 3 && user.getGrade() < 4)
+			score = score + 3;
+		else if (user.getGrade() >= 4 && user.getGrade() < 4.5)
+			score = score + 4;
+		else
+			score = score + 5;
+	}
+
+	//스트레스 점수
+	{
+		if (user.getStress() >= 4 && user.getStress() < 5)
+			score = score + 1;
+		else if (user.getStress() >= 3 && user.getStress() < 4)
+			score = score + 2;
+		else if (user.getStress() >= 2 && user.getStress() < 3)
+			score = score + 3;
+		else if (user.getStress() >= 1 && user.getStress() < 2)
+			score = score + 4;
+		else if (user.getStress() > 0 && user.getStress() < 1)
+			score = score + 5;
+		else
+			score = score + 6;
+	}
+
+	//인기도점수
+	{
+		if (user.getPopularity() >= 1 && user.getPopularity() < 20)
+			score = score + 1;
+		else if (user.getPopularity() >= 20 && user.getPopularity() < 40)
+			score = score + 2;
+		else if (user.getPopularity() >= 40 && user.getPopularity() < 60)
+			score = score + 3;
+		else if (user.getPopularity() >= 60 && user.getPopularity() < 80)
+			score = score + 4;
+		else if (user.getPopularity() >= 80 && user.getPopularity() < 100)
+			score = score + 5;
+		else
+			score = score + 6;
+	}
+	
+		//스폐셜엔딩(돌연사는 0점)
+	{
+		if (endname == "Breaklove")
+			score = score + 100;
+		else if (endname == "Nobelprize")
+			score = score + 80;
+		else if (endname == "Monk" || endname == "ManyF" || endname == "Celeb")
+			score = score + 60;
+	}
+}
+
+//일반엔딩시 점수계산
+void Scoring::setScore(State& user, bool love, int endNum)
 {
 	//학점 점수
 	{
@@ -90,12 +147,15 @@ void Scoring::setScore(State& user, double end)
 			score = score + 6;
 	}
 
-	//엔딩점수
+	//일반엔딩
 	{
-		
+		score = score + endNum * 10;
+		if (love)
+			score = score-10;
 	}
 }
 
+//점수 호출함수
 int Scoring::getScore()
 {
 	return score;
