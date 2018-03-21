@@ -610,55 +610,67 @@ bool Ending::makeEnding(State& currentState, int selection, vector<string>& endS
 	// 완결 엔딩
 	if (turn == 10)
 	{
+		int num;
 		endScript = Nomal;
 		if (currentState.getPopularity() < 20)
 		{
 			endScript.push_back(Outside[0]);
 			endScript.push_back(Outside[1]);
 			endScript.push_back(Outside[2]);
+			num++;
 		}
 		if (currentState.getPopularity() > 70)
 		{
 			endScript.push_back(Leader[0]);
 			endScript.push_back(Leader[1]);
 			endScript.push_back(Leader[2]);
+			num++;
 		}
 		if (currentState.getGrade() > 4.2)
 		{
 			endScript.push_back(Top[0]);
 			endScript.push_back(Top[1]);
 			endScript.push_back(Top[2]);
+			num++;
 		}
 		if (currentState.getLove() == true)
 		{
 			endScript.push_back(Love[0]);
 			endScript.push_back(Love[1]);
 			endScript.push_back(Love[2]);
+			num--;
 		}
 		if (currentState.getLove() == false)
 		{
 			endScript.push_back(Sole[0]);
 			endScript.push_back(Sole[1]);
 			endScript.push_back(Sole[2]);
+			num++;
 		}
 		if (currentState.getStress() >= 4)
 		{
 			endScript.push_back(Leave[0]);
 			endScript.push_back(Leave[1]);
 			endScript.push_back(Leave[2]);
+			num++;
 		}
 		if (currentState.getStress() <= 2)
 		{
 			endScript.push_back(Peace[0]);
 			endScript.push_back(Peace[1]);
 			endScript.push_back(Peace[2]);
+			num++;
 		}
 		if (currentState.getTr() == true)
 		{
 			endScript.push_back(Tr[0]);
 			endScript.push_back(Tr[1]);
 			endScript.push_back(Tr[2]);
+			num++;
 		}
+		Scoring score;
+		score.setScore(currentState, num);
+		currentState.setScore(score.getScore());
 
 		return true;
 	}
@@ -667,26 +679,41 @@ bool Ending::makeEnding(State& currentState, int selection, vector<string>& endS
 		if (nobelprize && selection == 0)
 		{
 			endScript = Nobelprize;
+			Scoring score;
+			score.setScore(currentState, "Nobelprize");
+			currentState.setScore(score.getScore());
 			return true;
 		}
 		else if (celeb && selection == 1)
 		{
 			endScript = Celeb;
+			Scoring score;
+			score.setScore(currentState, "Celeb");
+			currentState.setScore(score.getScore());
 			return true;
 		}
 		else if (monk && selection == 2)
 		{
 			endScript = Monk;
+			Scoring score;
+			score.setScore(currentState, "Monk");
+			currentState.setScore(score.getScore());
 			return true;
 		}
 		else if (breaklove)
 		{
 			endScript = Breaklove;
+			Scoring score;
+			score.setScore(currentState, "Breaklove");
+			currentState.setScore(score.getScore());
 			return true;
 		}
 		else if (manyF)
 		{
 			endScript = ManyF;
+			Scoring score;
+			score.setScore(currentState, "ManyF");
+			currentState.setScore(score.getScore());
 			return true;
 		}
 		else if (die)
@@ -699,6 +726,9 @@ bool Ending::makeEnding(State& currentState, int selection, vector<string>& endS
 				endScript.push_back("학교 가기 싫어 사망");
 				endScript.push_back("");
 				endScript.push_back("");
+				Scoring score;
+				score.setScore(currentState, "Die");
+				currentState.setScore(score.getScore());
 				return true;
 			}
 			if (a == 1)
@@ -706,6 +736,9 @@ bool Ending::makeEnding(State& currentState, int selection, vector<string>& endS
 				endScript.push_back("소주병에 손가락이 찔려 사망");
 				endScript.push_back("");
 				endScript.push_back("");
+				Scoring score;
+				score.setScore(currentState, "Die");
+				currentState.setScore(score.getScore());
 				return true;
 			}
 			if (a == 2)
@@ -713,6 +746,9 @@ bool Ending::makeEnding(State& currentState, int selection, vector<string>& endS
 				endScript.push_back("암세포가 암에 걸려 사망");
 				endScript.push_back("");
 				endScript.push_back("");
+				Scoring score;
+				score.setScore(currentState, "Die");
+				currentState.setScore(score.getScore());
 				return true;
 			}
 			if (a == 3)
@@ -720,6 +756,9 @@ bool Ending::makeEnding(State& currentState, int selection, vector<string>& endS
 				endScript.push_back("한조를 픽해 사망");
 				endScript.push_back("");
 				endScript.push_back("");
+				Scoring score;
+				score.setScore(currentState, "Die");
+				currentState.setScore(score.getScore());
 				return true;
 			}
 			if (a == 4)
@@ -727,6 +766,9 @@ bool Ending::makeEnding(State& currentState, int selection, vector<string>& endS
 				endScript.push_back("친구가 없어 사망");
 				endScript.push_back("");
 				endScript.push_back("");
+				Scoring score;
+				score.setScore(currentState, "Die");
+				currentState.setScore(score.getScore());
 				return true;
 			}
 			if (a == 5)
@@ -734,10 +776,15 @@ bool Ending::makeEnding(State& currentState, int selection, vector<string>& endS
 				endScript.push_back("이불 밖으로 나와 사망");
 				endScript.push_back("");
 				endScript.push_back("");
+				Scoring score;
+				score.setScore(currentState, "Die");
+				currentState.setScore(score.getScore());
 				return true;
 			}
 		}
 	}
+
+	
 
 	return false;
 }

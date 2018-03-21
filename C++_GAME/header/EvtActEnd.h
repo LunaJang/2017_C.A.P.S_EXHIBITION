@@ -1,6 +1,7 @@
 #pragma once
 #include "Player.h"
 #include <time.h>
+#include "Ranking.h"
 using namespace std;
 
 #define start turn == 0

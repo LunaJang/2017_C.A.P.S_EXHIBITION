@@ -95,11 +95,13 @@ void Scoring::setScore(State& user, string endname)
 			score = score + 80;
 		else if (endname == "Monk" || endname == "ManyF" || endname == "Celeb")
 			score = score + 60;
+		else if (endname == "Die")
+			score = score;
 	}
 }
 
 //일반엔딩시 점수계산
-void Scoring::setScore(State& user, bool love, int endNum)
+void Scoring::setScore(State& user, int endNum)
 {
 	//학점 점수
 	{
@@ -150,8 +152,6 @@ void Scoring::setScore(State& user, bool love, int endNum)
 	//일반엔딩
 	{
 		score = score + endNum * 10;
-		if (love)
-			score = score-10;
 	}
 }
 
@@ -159,4 +159,11 @@ void Scoring::setScore(State& user, bool love, int endNum)
 int Scoring::getScore()
 {
 	return score;
+}
+
+
+Rank::Rank()
+{
+	name="";
+	rank = 1;
 }

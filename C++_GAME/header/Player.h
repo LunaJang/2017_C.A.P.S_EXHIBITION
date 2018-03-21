@@ -26,6 +26,8 @@ using namespace std;
 
 #define DEFAULT_NAME seong
 
+#define DEFAULT_SCORE 0
+
 class State {
 	double grade;
 	int stress;
@@ -33,6 +35,7 @@ class State {
 	int liver;
 	bool love;
 	bool tr;	//찍힘인데 변수이름을 뭘로 할지 모르겠어요...
+	int score;
 public:
 	void changeGrade(double amount);
 	double getGrade();
@@ -56,6 +59,8 @@ public:
 	bool getTr();
 	void setTr(bool tr);
 
+	int getScore();
+	void setScore(int score);
 
 
 };

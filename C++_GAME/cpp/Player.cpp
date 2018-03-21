@@ -11,6 +11,7 @@ Player::Player()
 	currentState.setLiver(DEFAULT_LIVER);
 	currentState.setLove(DEFAULT_LOVE);
 	currentState.setTr(DEFAULT_TR);
+	currentState.setScore(DEFAULT_SCORE) ;
 }
 
 string Player::getName()
@@ -162,5 +163,14 @@ void State::setTr(bool tr)
 	this->tr = tr;
 }
 
+int State::getScore()
+{
+	return score;
+}
+
+void State::setScore(int score)
+{
+	this->score = score;
+}
 
 
