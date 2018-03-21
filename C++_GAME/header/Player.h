@@ -16,8 +16,13 @@ using namespace std;
 #define MIN_POPULARITY 0
 #define DEFAULT_POPULARITY 50
 
-#define MALE true
-#define FEMALE false
+#define MAX_LIVER 7
+#define MIN_LIVER 0
+#define DEFAULT_LIVER 2
+
+#define DEFAULT_LOVE false
+
+#define DEFAULT_TR false
 
 #define DEFAULT_NAME seong
 
@@ -31,21 +36,27 @@ class State {
 public:
 	void changeGrade(double amount);
 	double getGrade();
-	
+	void setGrade(double grade);
+
 	void changeStress(int amount);
 	int getStress();
+	void setStress(int stress);
 
 	void changePopularity(int amount);
 	int getPopularity();
+	void setPopularity(int popularity);
+	
+	void changeLiver(int amount);
+	int getLiver();
+	void setLiver(int liver);
 
 	bool getLove();
 	void setLove(bool love);
-	
+
 	bool getTr();
 	void setTr(bool tr);
-	
-	int getLiver();
-	void setLiver(int liver);
+
+
 
 };
 

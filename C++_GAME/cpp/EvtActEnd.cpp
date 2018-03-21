@@ -497,7 +497,7 @@ void Ending::setEndScript(string userName) {
 	ManyF.push_back("");
 	ManyF.push_back("아 씨바, 할말을 잊었습니다. ");
 	ManyF.push_back("");								//보광 or 엄마
-	//EndScript.push_back(ManyF);
+														//EndScript.push_back(ManyF);
 
 	Nobelprize.push_back("공부는 너무 행복해!");
 	Nobelprize.push_back("오늘도 즐겁게 공부를 하자!");
@@ -688,9 +688,10 @@ bool Ending::makeEnding(State& currentState, int selection, vector<string>& endS
 		{
 			endScript = ManyF;
 			return true;
-		}		
+		}
 		else if (die)
 		{
+			
 			int a = rand() % 6;
 			endScript = Die;
 			if (a == 0)
@@ -756,28 +757,34 @@ void Action::setActScript() {
 }
 void Action::makeAction(vector<string>& actScript, int selection, State& currentState)
 {
-		if (selection == 1)		//공부하기
-		{
-			actScript = act1;
-			currentState.changeGrade(0.4);
-			currentState.changeStress(1);
-			return;
-		}
+	srand(time(NULL));
+	if (selection == 1)		//공부하기
+	{
+		actScript = act1;
+		currentState.changeGrade(0.4);
+		currentState.changeStress(1);
+		return;
+	}
 
-		else if (selection == 2)		//집에서 쉬기
+	else if (selection == 2)		//집에서 쉬기
+	{
+		actScript = act2;
+		currentState.changeStress(-1);
+		currentState.changePopularity(-8);
+		return;
+	}
+	else		//친구들과 놀기
+	{
+		int b = rand() % 9;
+		actScript = act3;
+		currentState.changePopularity(10);
+		currentState.changeGrade(-0.3);
+		if (b > 5)
 		{
-			actScript = act2;
-			currentState.changeStress(-1);
-			currentState.changePopularity(-8);
-			return;
+			currentState.changeLiver(1);
 		}
-		else		//친구들과 놀기
-		{
-			actScript = act3;
-			currentState.changePopularity(10);
-			currentState.changeGrade(-0.3);
-			return;
-		}
+		return;
+	}
 
 }
 

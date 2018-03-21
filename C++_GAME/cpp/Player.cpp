@@ -5,9 +5,12 @@ using namespace std;
 Player::Player()
 {
 	name = "DEFAULT_NAME";
-	currentState.changePopularity(DEFAULT_POPULARITY);
-	currentState.changeGrade(DEFAULT_GRADE);
-	currentState.changeStress(DEFAULT_STRESS);
+	currentState.setPopularity(DEFAULT_POPULARITY);
+	currentState.setGrade(DEFAULT_GRADE);
+	currentState.setStress(DEFAULT_STRESS);
+	currentState.setLiver(DEFAULT_LIVER);
+	currentState.setLove(DEFAULT_LOVE);
+	currentState.setTr(DEFAULT_TR);
 }
 
 string Player::getName()
@@ -98,6 +101,47 @@ int State::getPopularity()
 	return popularity;
 }
 
+void State::setGrade(double grade)
+{
+	this->grade = grade;
+}
+
+void State::setStress(int stress)
+{
+	this->stress = stress;
+}
+
+void State::setPopularity(int popularity)
+{
+	this->popularity = popularity;
+}
+
+void State::changeLiver(int amount)
+{
+	if (amount >= 0 && (this->liver + amount) > MAX_LIVER)
+	{
+		this->liver = MAX_LIVER;
+	}
+	else if (amount < 0 && (this->liver - amount) < MIN_LIVER)
+	{
+		this->liver = MIN_LIVER;
+	}
+	else
+	{
+		this->liver = this->liver + amount;
+	}
+}
+
+int State::getLiver()
+{
+	return liver;
+}
+
+void State::setLiver(int liver)
+{
+	this->liver = liver;
+}
+
 bool State::getLove()
 {
 	return love;
@@ -118,12 +162,5 @@ void State::setTr(bool tr)
 	this->tr = tr;
 }
 
-int State::getLiver()
-{
-	return liver;
-}
 
-void State::setLiver(int liver)
-{
-	this->liver = liver;
-}
+

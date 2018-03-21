@@ -13,15 +13,15 @@ using namespace std;
 #define first currentState.getGrade() >= 4.3 && currentState.getGrade() < 4.5 && currentState.getStress() == 3 && currentState.getStress() == 4
 #define celeb currentState.getPopularity() >= 80 && currentState.getGrade() >= 3.5
 #define outsider currentState.getPopularity() <= 30 // 상태(끝날때 이 상태이면 엔딩) >> 10턴까지 존버
-	
+
 #define monk currentState.getStress() == 0
 #define president currentState.getPopularity() == 100
 #define nobelprize currentState.getGrade() == 4.5
 #define manyF currentState.getGrade() <= 1.7
 #define breaklove currentState.getLove() == 1 && currentState.getPopularity() <= 20 // 엔딩(한번이라도 충족되면 엔딩)
-	
+
 #define die currentState.getStress() + currentState.getLiver() >= 8// 충족 되어도 랜덤값 충족해야 엔딩
-	
+
 #define donghwan special == true // 동환이벤트
 
 class Event {
