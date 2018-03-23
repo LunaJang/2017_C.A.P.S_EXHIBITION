@@ -38,7 +38,6 @@ Scoring::Scoring()
 	score = 0;
 }
 
-//스폐셜엔딩시 점수계산
 void Scoring::setScore(State& user, string endname)
 {
 	//학점 점수
@@ -100,7 +99,6 @@ void Scoring::setScore(State& user, string endname)
 	}
 }
 
-//일반엔딩시 점수계산
 void Scoring::setScore(State& user, int endNum)
 {
 	//학점 점수
@@ -155,15 +153,127 @@ void Scoring::setScore(State& user, int endNum)
 	}
 }
 
-//점수 호출함수
 int Scoring::getScore()
 {
 	return score;
 }
 
+Data::Data(string name, int score)
+{
+	this->name = name;
+	this->score = score;
+}
+
+string Data::getname()
+{
+	return name;
+}
+
+int Data::getscore()
+{
+	return score;
+}
+
+int Rank::to_number(string s)
+{
+	istringstream ss(s);
+	int x;
+	ss >> x;
+	return x;
+}
+
+string Rank::to_str(int x)
+{
+	ostringstream ss;
+	ss << x;
+	return ss.str();
+}
+
+void Rank::inputRank()
+{
+	ifstream in;
+	in.open("rank.txt");
+	string iname;
+	string iscore;
+	int count = 1;
+	D_ranking.clear();
+
+	if (in.is_open())
+	{
+		while (!in.eof())
+		{
+			if (count % 2 == 1)
+			{
+				getline(in, iname);
+				count++;
+			}
+			else
+			{
+				getline(in, iscore);
+				count++;
+				Data info(iname, to_number(iscore));
+				D_ranking.push_back(info);
+			}
+		}
+	}
+}
+
+bool cmp_Data(Data a, Data b)
+{
+	return a.getscore() > b.getscore();
+}
+
+void Rank::addUser(string name, int score)
+{
+
+	Data UserInfo(name, score);
+	D_ranking.push_back(UserInfo);
+}
+
+void Rank::sorting()
+{
+	sort(D_ranking.begin(), D_ranking.end(), cmp_Data);
+}
+
+//void Rank::print()
+//{
+//	for (int i = 0; i < S_ranking.size(); i++)
+//		cout << S_ranking[i];
+//}
+
+void Rank::outputRank()
+{
+	ofstream out;
+	out.open("rank.txt");
+	if (out.is_open())
+		for (int i = 0; i < D_ranking.size(); i++)
+			out << D_ranking[i].getname() << endl << D_ranking[i].getscore() << endl;
+
+}
+
+vector<string> Rank::saveToString()
+{
+	S_ranking.clear();
+	for (int i = 0; i < D_ranking.size(); ++i)
+	{
+		string line;
+		line.append(to_str(i + 1) + "등 " + D_ranking[i].getname() + " " + to_str(D_ranking[i].getscore()) + "\n");
+		S_ranking.push_back(line);
+	}
+	return S_ranking;
+}
+
+Rank::Rank(string name, int score)
+{
+	inputRank();
+	addUser(name, score);
+	sorting();
+	outputRank();
+	saveToString();
+}
 
 Rank::Rank()
 {
-	name="";
-	rank = 1;
+	inputRank();
+	saveToString();
 }
