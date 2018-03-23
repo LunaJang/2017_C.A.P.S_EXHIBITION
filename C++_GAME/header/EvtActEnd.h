@@ -9,6 +9,7 @@ using namespace std;
 #define semester2 turn >= 7 && turn <= 10
 #define vacation turn >= 5 && turn <= 6 // ½ÃÁ¡
 
+#define sum  currentState.getPopularity() == 90 && currentState.getStress() <= 2
 #define lover love == 1
 #define freedom currentState.getStress() <= 2
 #define first currentState.getGrade() >= 4.3 && currentState.getGrade() < 4.5 && currentState.getStress() == 3 && currentState.getStress() == 4
@@ -87,3 +88,5 @@ public:
 	void makeAction(vector<string>& actScript, int selection, State& currentState);
 
 };
+
+

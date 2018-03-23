@@ -11,10 +11,9 @@ void Event::setEvtScript(string userName) {
 	Fixed3.push_back("… 잠시 후");
 	Fixed3.push_back("");
 
-	Fixed3.push_back("");
-	Fixed3.push_back("인사 오지게 박겠습니다! 31기 [이름]입니다.");
-
+	Fixed3.push_back("인사 오지게 박겠습니다! 31기" + userName + "입니다.");
 	Fixed3.push_back("주량은 4병이구요, 술게임이 특기입니다.");
+	Fixed3.push_back("");
 
 	Fixed3.push_back("앙보승 : 아니 니가 그렇게 술게임을 잘해?");
 	Fixed3.push_back("우리 테이블로 따라와");
@@ -42,21 +41,17 @@ void Event::setEvtScript(string userName) {
 	Fixed4.push_back("누가 나를 심판 하는가! 내가 바로 정답이다!");
 
 	Fixed4.push_back("오 제 강의 10년 중에 최초로 중간고사 만점이 나왔습니다.");
-	Fixed4.push_back("만점은 한 명 [이름]입니다. 박수! 짝짝짝");
+	Fixed4.push_back("만점은 한 명" + userName + "입니다. 박수! 짝짝짝");
 	Fixed4.push_back("");//양봉국
 
-	Fixed4.push_back("이번 학기 성적을 기대해도 될 것 같다.");
 	Fixed4.push_back("");
+	Fixed4.push_back("이번 학기 성적을 기대해도 될 것 같다.");
 	Fixed4.push_back("");
 	//EvtScript.push_back(Fixed4);
 
 	Fixed5.push_back("크으, 대학생활의 꽃. MT! membership training의 약자!");
 	Fixed5.push_back("벌써부터 무더위의 기운이 몰아치고 있지만 봄 엠티라니.");
-	Fixed5.push_back("");
-
 	Fixed5.push_back("아직까지 부는 꽃가루들도 날 응원해주고 있다.");
-	Fixed5.push_back("");
-	Fixed5.push_back("");
 
 	Fixed5.push_back("조팡현 : 얘들아 고기 다 구웠다 먹자!");
 	Fixed5.push_back("");
@@ -128,29 +123,29 @@ void Event::setEvtScript(string userName) {
 	Fixed62.push_back("이걸 방해하네");
 	Fixed62.push_back("누구세요?");
 
-	Fixed62.push_back("아 안녕하세요.");
+	Fixed62.push_back("그(녀) : 아 안녕하세요.");
 	Fixed62.push_back("이번에 옆집으로 이사 온 사람이에요.");
 	Fixed62.push_back("");//그(녀)
 
-	Fixed62.push_back("다름이 아니라 요 며칠간 공사 소음 때문에");
+	Fixed62.push_back("그(녀) : 다름이 아니라 요 며칠간 공사 소음 때문에");
 	Fixed62.push_back("죄송해서 떡 돌리려고 왔....?");
-	Fixed62.push_back("");//그(녀)
+	Fixed62.push_back("");
 
 	Fixed62.push_back("...?!");
 	Fixed62.push_back("혹시 동국중 나오셨나요?");
 	Fixed62.push_back("");
 
-	Fixed62.push_back("어 맞아!");
-	Fixed62.push_back("너 [이름] 맞지? 와 진짜 오랜만이다.");
-	Fixed62.push_back("");//그(녀)
+	Fixed62.push_back("그(녀) : 너" + userName + "맞지 ? ");
+	Fixed62.push_back("와 진짜 오랜만이다.");//
+	Fixed62.push_back("");
 
 	Fixed62.push_back("와 그러게 진짜 오랜만이네!");
 	Fixed62.push_back("너 전학 가고서는 한 번도 못 봤었는데,");
 	Fixed62.push_back("여기서 다 보네");
 
-	Fixed62.push_back("그러게 세상 진짜 좁다");
+	Fixed62.push_back("그(녀) : 그러게 세상 진짜 좁다");
 	Fixed62.push_back("혹시 오늘 할 거 없으면");
-	Fixed62.push_back(" 저녁에 술이나 한잔할래?");//그(녀)
+	Fixed62.push_back("저녁에 술이나 한잔할래?");//
 
 	Fixed62.push_back("안 그래도 술 마시고 싶었는데");
 	Fixed62.push_back("너 떡 다 돌리면 같이 마시러 가자.");
@@ -164,27 +159,35 @@ void Event::setEvtScript(string userName) {
 	Fixed62.push_back("이미 옛날이야기니까 하는 말인데,");
 	Fixed62.push_back("내가 너 좋아했던 거 알고 있어?");
 
-	Fixed62.push_back("어 너도 나 좋아했었어?");
+	Fixed62.push_back("그(녀) : 어 너도 나 좋아했었어?");
 	Fixed62.push_back("나도 너 좋아했었는데ㅋㅋㅋㅋ");
-	Fixed62.push_back("");//그(녀)
+	Fixed62.push_back("");//
 
 	Fixed62.push_back("ㅋㅋㅋㅋ에이 거짓말 하지 마");
 	Fixed62.push_back("그때 너 철벽치는거로 유명했던거 기억안나?");
 	Fixed62.push_back("");
 
-	Fixed62.push_back("그건 네가 아니라서 그랬던 거고...ㅎ");
+	Fixed62.push_back("그(녀) : 그건 네가 아니라서 그랬던 거고...ㅎ");
 	Fixed62.push_back("못 믿겠으면 지금이라도 해보던가");
-	Fixed62.push_back("");//그(녀)
+	Fixed62.push_back("");//
 
 	Fixed62.push_back("하..하...");
 	Fixed62.push_back("너 많이 취한 거 같다 데려다줄게 들어가자");
 	Fixed62.push_back("");
 
-	Fixed62.push_back("넌 하나도 안 변했네....");
+	Fixed62.push_back("그(녀) : 넌 하나도 안 변했네....");
 	Fixed62.push_back("다시는 못 만날 거라 생각했었는데...다행이야");
-	Fixed62.push_back("");//그(녀)
+	Fixed62.push_back("");//
 
+	Fixed62.push_back("며칠후...");
 	Fixed62.push_back("");
+	Fixed62.push_back("");
+
+	Fixed62.push_back("너무 행복하다");
+	Fixed62.push_back("이전까지는 어두웠던 내 인생이");
+	Fixed62.push_back("이제야 밝게 빛나는 것 같다.");
+
+	Fixed62.push_back("오늘도 데이트를 위해 집을 나선다.");
 	Fixed62.push_back("");
 	Fixed62.push_back("");
 	//EvtScript.push_back(Fixed62);
@@ -308,7 +311,7 @@ void Event::setEvtScript(string userName) {
 	Fixed10.push_back("");
 	Fixed10.push_back("");
 
-	Fixed10.push_back("할머니 : [이름]아 일어나 밥 먹어야지!");
+	Fixed10.push_back("할머니 : 이제 그만 일어나 밥 먹어야지!");
 	Fixed10.push_back("빨리 안 먹으면 맛있는 거 동생들이 다 먹는다!");
 	Fixed10.push_back("");//할머니
 
@@ -376,60 +379,190 @@ void Event::setEvtScript(string userName) {
 	Ran1.push_back("");
 	//EvtScript.push_back(Ran1);
 
-	Ran2.push_back("김후진 : 오늘 술 마실래?");
+	Ran2.push_back("이렇게 있는 것도 지루한데….");
+	Ran2.push_back("동아리 사람들 이랑 카트라이더나 할까??");
+	Ran2.push_back("[시스템] : 윤XX씨, 고 인물씨가 게임 중입니다.");
+	Ran2.push_back("아... 하필이면 캡스 대표 고인물 두 명이랑 개인전을!");
+	Ran2.push_back("청정수인 나에겐 너무 가혹한 시련이... 응?");
 	Ran2.push_back("");
-	Ran2.push_back("");//김후진
-
-	Ran2.push_back("정통환 : 안돼, 나 중도갈거야.");
-	Ran2.push_back("이번학기 진짜 학점 4 넘는다.");
-	Ran2.push_back("");//정통환
-
-	Ran2.push_back("김후진 : 아니 이걸 안 와? 이걸 뺀다고?");
-	Ran2.push_back("[이름]도 오는데?");
-	Ran2.push_back("");//김후진
-
-	Ran2.push_back("정통환 : 오늘 양봉국 교수님 XX 강의 들었는데, 진짜 너무 빡센 거 같아.");
-	Ran2.push_back("");
-	Ran2.push_back("");//정통환
-
-	Ran2.push_back("김후진 : 그거 니가 못 하는 거야 그 교수님 갓교수님이야. ");
-	Ran2.push_back("");
-	Ran2.push_back("");//김후진
-
-	Ran2.push_back("나도 양봉국 교수님 강의 듣는데, 진짜 너무하더라.");
-	Ran2.push_back("가르쳐 주지도 않고 바로 실습 시키는데 질문도 안 받더라.");
-	Ran2.push_back("진짜 개..");
-	Ran2.push_back("갑자기 누가 어깨에 손을 얻..?!");
-	Ran2.push_back("아니 교수님이잖아????");
-	Ran2.push_back("");
-
-	Ran2.push_back("양봉국 교수 : 그래 자네 생각은 잘 알았고, 이름이 뭔가?");
-	Ran2.push_back("학점은 기대하는게 좋을 거야.");
-	Ran2.push_back("");//양봉국
-
-	Ran2.push_back("싸늘하다.. 가슴에 비수가 날아와 꽃인다..");
-	Ran2.push_back("큰일난 것 같다..");
-	Ran2.push_back("");
+	Ran2.push_back("1….1등?!?!?!");
+	Ran2.push_back("내가 1등이라니!!!");
+	Ran2.push_back("연카로 1등이라니!!!");
+	Ran2.push_back("드디어 나도... 청정수를 떠나 고인물이 되는 건가!!");
+	Ran2.push_back("고이는 기분이 든다...");
+	Ran2.push_back("스트레스가 사라져간다…");
 	//EvtScript.push_back(Ran2);
 
-	Ran3.push_back("이렇게 있는 것도 지루한데….");
-	Ran3.push_back("동아리 사람들 이랑 카트라이더나 할까??");
-	Ran3.push_back("[시스템] : 윤XX씨, 고 인물씨가 게임 중입니다.");
-	Ran3.push_back("아... 하필이면 캡스 대표 고인물 두 명이랑 개인전을!");
-	Ran3.push_back("청정수인 나에겐 너무 가혹한 시련이... 응?");
+	Ran3.push_back("김후진 : 오늘 술 마실래?");
 	Ran3.push_back("");
-	Ran3.push_back("1….1등?!?!?!");
-	Ran3.push_back("내가 1등이라니!!!");
-	Ran3.push_back("연카로 1등이라니!!!");
-	Ran3.push_back("드디어 나도... 청정수를 떠나 고인물이 되는 건가!!");
-	Ran3.push_back("고이는 기분이 든다...");
-	Ran3.push_back("스트레스가 사라져간다…");
+	Ran3.push_back("");//김후진
+
+	Ran3.push_back("정통환 : 안돼, 나 중도갈거야.");
+	Ran3.push_back("이번학기 진짜 학점 4 넘는다.");
+	Ran3.push_back("");//정통환
+
+	Ran3.push_back("김후진 : 아니 이걸 안 와?" + );
+	Ran3.push_back("이걸 뺀다고?");
+	Ran3.push_back(userName + "도 오는데 ?");//김후진
+
+	Ran3.push_back("정통환 : 오늘 양봉국 교수님 XX 강의 들었는데, 진짜 너무 빡센 거 같아.");
+	Ran3.push_back("");
+	Ran3.push_back("");//정통환
+
+	Ran3.push_back("김후진 : 그거 니가 못 하는 거야 그 교수님 갓교수님이야. ");
+	Ran3.push_back("");
+	Ran3.push_back("");//김후진
+
+	Ran3.push_back("나도 양봉국 교수님 강의 듣는데, 진짜 너무하더라.");
+	Ran3.push_back("가르쳐 주지도 않고 바로 실습 시키는데 질문도 안 받더라.");
+	Ran3.push_back("진짜 개..");
+	Ran3.push_back("갑자기 누가 어깨에 손을 얻..?!");
+	Ran3.push_back("아니 교수님이잖아????");
+	Ran3.push_back("");
+
+	Ran3.push_back("양봉국 교수 : 그래 자네 생각은 잘 알았고, 이름이 뭔가?");
+	Ran3.push_back("학점은 기대하는게 좋을 거야.");
+	Ran3.push_back("");//양봉국
+
+	Ran3.push_back("싸늘하다.. 가슴에 비수가 날아와 꽃인다..");
+	Ran3.push_back("큰일난 것 같다..");
+	Ran3.push_back("");
 	//EvtScript.push_back(Ran3);
 }
 bool Event::makeEvt(State& currentState, int turn, int selection, vector<string>& evtcript)
 {
+	srand(time(NULL));
+
+	int r = rand() % 10;
 	// 어서 하시오!!
+
+	if (turn == 3 && selection == 3)
+	{
+		evtcript = Fixed3;
+		currentState.changePopularity(15);
+		currentState.changeGrade(-0.3);
+		currentState.changeLiver(1);
+		return true;
+	}
+
+	if (turn == 4 && selection == 1)
+	{
+		evtcript = Fixed4;
+		currentState.changeGrade(1);
+		currentState.changeStress(1);
+		return true;
+	}
+
+	if (turn == 5 && selection == 3)
+	{
+		evtcript = Fixed5;
+		currentState.changePopularity(15);
+		currentState.changeGrade(-0.3);
+		currentState.changeLiver(1);
+		return true;
+	}
+
+	if (turn == 6 && selection == 1 && sum)
+	{
+		evtcript = Fixed61;
+		currentState.setLove(true);
+		return true;
+	}
+
+	if (turn == 6 && selection == 2)
+	{
+		evtcript = Fixed62;
+		currentState.setLove(true);
+		return true;
+	}
+
+	if (turn == 6 && selection == 3)
+	{
+		evtcript = Fixed63;
+		currentState.setLove(true);
+		return true;
+	}
+
+	if (turn == 7 && selection == 1)
+	{
+		evtcript = Fixed7;
+		currentState.changeGrade(1);
+		return true;
+	}
+
+	if (turn == 8 && selection == 3)
+	{
+		evtcript = Fixed8;
+		currentState.changePopularity(15);
+		currentState.changeGrade(-0.3);
+		currentState.changeLiver(1);
+		return true;
+	}
+
+	if (turn == 9 && selection == 1)
+	{
+		evtcript = Fixed9;
+		currentState.changeGrade(1);
+		currentState.changeStress(1);
+		return true;
+	}
+
+	if (turn == 10 && selection == 1 && selection == 2 && selection == 3)
+	{
+		evtcript = Fixed10;
+		currentState.changeStress(-2);
+		return true;
+	}
+
+	if (turn == 11 && selection == 1)
+	{
+		evtcript = Fixed11;
+		currentState.changeGrade(0);
+		currentState.changeStress(2);
+		return true;
+	}
+
+	if (turn == 12 && selection == 1 && selection == 2 && selection == 3 && currentState.getLove() == 1)
+	{
+		evtcript = Fixed121;
+		currentState.changeStress(-2);
+		return true;
+	}
+
+	if (turn == 12 && selection == 1 && selection == 2 && selection == 3 && currentState.getLove() == 0)
+	{
+		evtcript = Fixed122;
+		currentState.changeStress(2);
+		return true;
+	}
+
+	else if (selection == 1 && r == 0)
+	{
+		evtcript = Ran1;
+		currentState.changeGrade(1);
+		return true;
+	}
+
+	else if (selection == 2 && r == 0)
+	{
+		evtcript = Ran2;
+		currentState.changeStress(-2);
+
+		return true;
+	}
+
+	else if (selection == 3 && r == 0)
+	{
+		evtcript = Ran3;
+		currentState.changeGrade(-1);
+		currentState.changeStress(1);
+		currentState.setTr(true);
+		return true;
+	}
 }
+
+
+
 
 void Ending::setEndScript(string userName) {
 
@@ -511,12 +644,12 @@ void Ending::setEndScript(string userName) {
 	Nobelprize.push_back("");
 	Nobelprize.push_back("");
 
-	Nobelprize.push_back("OOO씨!!");
+	Nobelprize.push_back(userName +"씨!");
 	Nobelprize.push_back("최연소 노벨상 수상자로 선정 되셨는데");
 	Nobelprize.push_back("소감 한 말씀 부탁 드립니다!");
 
-	Nobelprize.push_back("");
 	Nobelprize.push_back("혼자 공부하다 논문을 쓰셨다던데 사실입니까??");
+	Nobelprize.push_back("");
 	Nobelprize.push_back("");
 
 	Nobelprize.push_back("야레야레…");
@@ -524,7 +657,7 @@ void Ending::setEndScript(string userName) {
 	Nobelprize.push_back("");
 
 	Nobelprize.push_back("교과서만 보고 공부했습니다.");
-	Nobelprize.push_back("구글 갓! ");
+	Nobelprize.push_back("후훗");
 	Nobelprize.push_back("");
 	//EndScript.push_back(Nobelprize);
 
@@ -549,15 +682,19 @@ void Ending::setEndScript(string userName) {
 	Celeb.push_back("");
 	Celeb.push_back("");
 
-	Celeb.push_back("이번 양훈의 숏터뷰에서는 ");
-	Celeb.push_back("만능 엔터테이너 OOO 님을 모셨습니다!!");
-	Celeb.push_back("OOO씨, 인기가 많으면 피곤하진 않으세요?");
+	Celeb.push_back("양훈 : 이번 양훈의 숏터뷰에서는 ");
+	Celeb.push_back("만능 엔터테이너 OOO ");
+	Celeb.push_back(userName + "님을 모셨습니다!!");
+
+	Celeb.push_back(userName + "씨,인기가 많으면 피곤하진 않으세요?");
+	Celeb.push_back("");
+	Celeb.push_back("");
 
 	Celeb.push_back("늘 새로워, 짜릿해");
 	Celeb.push_back("인기가 최고야");
 	Celeb.push_back("");
 
-	Celeb.push_back("어이가 없네…");
+	Celeb.push_back("양훈 : 맷돌의 손잡이가 없네…");
 	Celeb.push_back("");
 	Celeb.push_back("");
 	//EndScript.push_back(Celeb);
@@ -593,7 +730,7 @@ void Ending::setEndScript(string userName) {
 	Sole.push_back("");
 
 	Leave.push_back("당신은 일 년간 너무 힘든 시간을 보냈습니다.");
-	Leave.push_back("OOO은 자유의 몸이에요!");
+	Leave.push_back(userName + "은 자유의 몸이에요!");
 	Leave.push_back("당신은 휴학했습니다.");
 
 	Peace.push_back("당신은 자유로운 영혼입니다.");
@@ -601,7 +738,7 @@ void Ending::setEndScript(string userName) {
 	Peace.push_back("");
 
 	Tr.push_back("지난 술자리에서 양복국 교수님께 실수한 후로");
-	Tr.push_back(" 교수님께 찍힌 상태입니다.");
+	Tr.push_back("교수님께 찍힌 상태입니다.");
 	Tr.push_back("");
 }
 bool Ending::makeEnding(State& currentState, int selection, vector<string>& endScript, int turn)
@@ -718,7 +855,7 @@ bool Ending::makeEnding(State& currentState, int selection, vector<string>& endS
 		}
 		else if (die)
 		{
-			
+
 			int a = rand() % 6;
 			endScript = Die;
 			if (a == 0)
@@ -784,7 +921,7 @@ bool Ending::makeEnding(State& currentState, int selection, vector<string>& endS
 		}
 	}
 
-	
+
 
 	return false;
 }
@@ -802,6 +939,7 @@ void Action::setActScript() {
 	act3.push_back("연락처가 늘어났다!");
 	act3.push_back("아... 내일 강의는 어떻게 하지?");
 }
+
 void Action::makeAction(vector<string>& actScript, int selection, State& currentState)
 {
 	srand(time(NULL));
@@ -834,4 +972,3 @@ void Action::makeAction(vector<string>& actScript, int selection, State& current
 	}
 
 }
-
