@@ -544,7 +544,7 @@ bool Event::makeEvt(State& currentState, int turn, int selection, vector<string>
 		return true;
 	}
 
-	if (turn == 12 && selection == 2 && currentState.getLove() == 1)
+	if (turn == 12 && currentState.getLove() == 1)
 	{
 		evtcript = Fixed121;
 		currentState.changeStress(-2);
