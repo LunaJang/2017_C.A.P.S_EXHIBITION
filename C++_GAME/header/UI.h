@@ -1,10 +1,6 @@
 #pragma once
+#include "headers.h"
 #define WAITING_TIME 100
-#include <string>
-#include <vector>
-#include <conio.h> 
-#include "Player.h"
-#include <iostream>
 
 class UI {
 public:
@@ -18,6 +14,6 @@ public:
 	static void print(vector <string>&sentence);
 	static void print(string &sentence);
 
-	static void printScript(int turn, string monthlyEvent, State& currentState, vector<string>&scriptbox);
+	static void printScript(int turn, string monthlyEvent, State& currentState, vector<string>&script);
 	static int printScript(int turn, string monthlyEvent, State& currentState, vector<string>&option, int num);
 };

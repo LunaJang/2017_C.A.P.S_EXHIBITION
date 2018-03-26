@@ -1,4 +1,6 @@
-#include "Ranking.h"
+#pragma once
+#include "headers.h"
+
 /*일반엔딩: 기본, 아싸, 과대, 과탑, 연인, 솔로, 휴학, 평화, 찍힘 (총 9개)
 중도엔딩: 이별, 열반, 학고, 노벨상, 데뷔, 돌연사 (총6개)
 일반엔딩 1개당 점수 10 (연애만 -10)
@@ -33,52 +35,45 @@
 
 using namespace std;
 
-Scoring::Scoring()
-{
-	score = 0;
-}
-int Scoring::getScore()
-{
-	return score;
-}
 // 스페셜 엔딩 점수 계산
-void Scoring::setScore(State& user, string endname)
+void Scoring::setScore(State& currentState, string endName)
 {
+	int score = 0;
 	//학점 점수
 	{
-		if (user.getGrade() < 2)
+		if (currentState.getGrade() < 2)
 			score += 1;
-		else if (user.getGrade() == 4.5)
+		else if (currentState.getGrade() == 4.5)
 			score += 5;
 		else
-			score += user.getGrade();
+			score += currentState.getGrade();
 	}
 	//스트레스 점수
 	{
-		if (user.getStress() >= 4 && user.getStress() < 5)
+		if (currentState.getStress() >= 4 && currentState.getStress() < 5)
 			score = score + 1;
-		else if (user.getStress() >= 3 && user.getStress() < 4)
+		else if (currentState.getStress() >= 3 && currentState.getStress() < 4)
 			score = score + 2;
-		else if (user.getStress() >= 2 && user.getStress() < 3)
+		else if (currentState.getStress() >= 2 && currentState.getStress() < 3)
 			score = score + 3;
-		else if (user.getStress() >= 1 && user.getStress() < 2)
+		else if (currentState.getStress() >= 1 && currentState.getStress() < 2)
 			score = score + 4;
-		else if (user.getStress() > 0 && user.getStress() < 1)
+		else if (currentState.getStress() > 0 && currentState.getStress() < 1)
 			score = score + 5;
 		else
 			score = score + 6;
 	}
 	//인기도점수
 	{
-		if (user.getPopularity() >= 1 && user.getPopularity() < 20)
+		if (currentState.getPopularity() >= 1 && currentState.getPopularity() < 20)
 			score = score + 1;
-		else if (user.getPopularity() >= 20 && user.getPopularity() < 40)
+		else if (currentState.getPopularity() >= 20 && currentState.getPopularity() < 40)
 			score = score + 2;
-		else if (user.getPopularity() >= 40 && user.getPopularity() < 60)
+		else if (currentState.getPopularity() >= 40 && currentState.getPopularity() < 60)
 			score = score + 3;
-		else if (user.getPopularity() >= 60 && user.getPopularity() < 80)
+		else if (currentState.getPopularity() >= 60 && currentState.getPopularity() < 80)
 			score = score + 4;
-		else if (user.getPopularity() >= 80 && user.getPopularity() < 100)
+		else if (currentState.getPopularity() >= 80 && currentState.getPopularity() < 100)
 			score = score + 5;
 		else
 			score = score + 6;
@@ -86,56 +81,58 @@ void Scoring::setScore(State& user, string endname)
 	
 		//스폐셜엔딩(돌연사는 0점)
 	{
-		if (endname == "Breaklove")
+		if (endName == "Breaklove")
 			score += 100;
-		else if (endname == "Nobelprize")
+		else if (endName == "Nobelprize")
 			score += 80;
-		else if (endname == "Monk" || endname == "ManyF" || endname == "Celeb")
+		else if (endName == "Monk" || endName == "ManyF" || endName == "Celeb")
 			score += 60;
 	}
+	currentState.setScore(score);
 }
 // 노말 엔딩 점수 계산
-void Scoring::setScore(State& user, int endNum)
+void Scoring::setScore(State& currentState, int endNum)
 {
+	int score = 0;
 	//학점 점수
 	{
-		if (user.getGrade() < 2)
+		if (currentState.getGrade() < 2)
 			score = score + 1;
-		else if (user.getGrade() >= 2 && user.getGrade() < 3)
+		else if (currentState.getGrade() >= 2 && currentState.getGrade() < 3)
 			score = score + 2;
-		else if (user.getGrade() >= 3 && user.getGrade() < 4)
+		else if (currentState.getGrade() >= 3 && currentState.getGrade() < 4)
 			score = score + 3;
-		else if (user.getGrade() >= 4 && user.getGrade() < 4.5)
+		else if (currentState.getGrade() >= 4 && currentState.getGrade() < 4.5)
 			score = score + 4;
 		else
 			score = score + 5;
 	}
 	//스트레스 점수
 	{
-		if (user.getStress() >= 4 && user.getStress() < 5)
+		if (currentState.getStress() >= 4 && currentState.getStress() < 5)
 			score += 1;
-		else if (user.getStress() >= 3 && user.getStress() < 4)
+		else if (currentState.getStress() >= 3 && currentState.getStress() < 4)
 			score += 2;
-		else if (user.getStress() >= 2 && user.getStress() < 3)
+		else if (currentState.getStress() >= 2 && currentState.getStress() < 3)
 			score += 3;
-		else if (user.getStress() >= 1 && user.getStress() < 2)
+		else if (currentState.getStress() >= 1 && currentState.getStress() < 2)
 			score += 4;
-		else if (user.getStress() > 0 && user.getStress() < 1)
+		else if (currentState.getStress() > 0 && currentState.getStress() < 1)
 			score += 5;
 		else
 			score += 6;
 	}
 	//인기도점수
 	{
-		if (user.getPopularity() >= 1 && user.getPopularity() < 20)
+		if (currentState.getPopularity() >= 1 && currentState.getPopularity() < 20)
 			score = score + 1;
-		else if (user.getPopularity() >= 20 && user.getPopularity() < 40)
+		else if (currentState.getPopularity() >= 20 && currentState.getPopularity() < 40)
 			score = score + 2;
-		else if (user.getPopularity() >= 40 && user.getPopularity() < 60)
+		else if (currentState.getPopularity() >= 40 && currentState.getPopularity() < 60)
 			score = score + 3;
-		else if (user.getPopularity() >= 60 && user.getPopularity() < 80)
+		else if (currentState.getPopularity() >= 60 && currentState.getPopularity() < 80)
 			score = score + 4;
-		else if (user.getPopularity() >= 80 && user.getPopularity() < 100)
+		else if (currentState.getPopularity() >= 80 && currentState.getPopularity() < 100)
 			score = score + 5;
 		else
 			score = score + 6;
@@ -145,6 +142,7 @@ void Scoring::setScore(State& user, int endNum)
 	{
 		score = score + endNum * 10;
 	}
+	currentState.setScore(score);
 }
 
 
@@ -169,20 +167,7 @@ bool Data::operator>(Data& a) {
 	return this->score > a.score;
 }
 
-/*int Rank::to_number(string s)
-{
-	istringstream ss(s);
-	int x;
-	ss >> x;
-	return x;
-}*/
-/*string Rank::to_str(int x)
-{
-	ostringstream ss;
-	ss << x;
-	return ss.str();
-}*/
-void Rank::readRank(vector<Data>& dRanking)
+void Ranking::readRank(vector<Data>& dRanking)
 {
 	ifstream in;
 	in.open("rank.txt");
@@ -211,7 +196,7 @@ void Rank::readRank(vector<Data>& dRanking)
 	}
 }
 
-void Rank::writeRank(vector<Data>& dRanking)
+void Ranking::writeRank(vector<Data>& dRanking)
 {
 	ofstream out;
 	out.open("rank.txt");
@@ -221,48 +206,33 @@ void Rank::writeRank(vector<Data>& dRanking)
 
 }
 
-void Rank::getRank(vector<string>& sRanking, string name, int score)
+void Ranking::getRank(vector<string>& sRanking, string name, int score)
 {
 	vector<Data> dRanking;
-	vector<string> s_ranking;
-
 	readRank(dRanking);
 	Data UserInfo(name, score);
 	dRanking.push_back(UserInfo);
 	sort(dRanking.begin(), dRanking.end());
 
-	s_ranking.clear();
+	for (int i = 1; i <= dRanking.size(); ++i)
+	{
+		string line;
+		line.append( i + "등 " + dRanking[i].getName() + "\n" + to_string(dRanking[i].getScore()) + "\n");
+		sRanking.push_back(line);
+	}
+	return;
+}
+
+void Ranking::getRank(vector<string>& sRanking)
+{
+	vector<Data> dRanking;
+	readRank(dRanking);
 
 	for (int i = 1; i <= dRanking.size(); ++i)
 	{
 		string line;
-		line.append( i + "등 " + dRanking[i].getName() + "\n" + to_string(dRanking[i].getscore()) + "\n");
-		s_ranking.push_back(line);
+		line.append(i + "등 " + dRanking[i].getName() + "\n" + to_string(dRanking[i].getScore()) + "\n");
+		sRanking.push_back(line);
 	}
-}
-
-void::getRank(vector<string>& sRanking)
-{
-	for (int i = 1; i <= D_ranking.size(); ++i)
-	{
-		string line;
-		line.append(i + "등 " + D_ranking[i].getname() + "\n" + to_string(D_ranking[i].getscore()) + "\n");
-		S_ranking.push_back(line);
-	}
-	return S_ranking;
-}
-
-Rank::Rank(string name, int score)
-{
-	readRank();
-	addUser(name, score);
-	sorting();
-	writeRank();
-	saveToString();
-}
-
-Rank::Rank()
-{
-	readRank();
-	saveToString();
+	return;
 }

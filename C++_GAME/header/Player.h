@@ -1,7 +1,5 @@
 #pragma once
-#include <iostream>
-#include <string>
-#include <vector>
+#include "headers.h"
 using namespace std;
 
 #define MAX_GRADE 4.5

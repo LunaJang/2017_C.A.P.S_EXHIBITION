@@ -1,4 +1,5 @@
-#include"UI.h"
+#pragma once
+#include "headers.h"
 
 using namespace std;
 
@@ -11,7 +12,7 @@ void UI::printOption(vector<string>&option, int num, int& cursor)
 
 		else { cout << "    "; }
 
-		cout << option[i]; // 선택지 출력
+		cout << option[i] << endl; // 선택지 출력
 	}
 }
 
@@ -45,18 +46,20 @@ int UI::printScript(int turn, string monthlyEvent, State& currentState, vector<s
 
 	do
 	{
-		cout << "[ " << turn + 1 << "월 ]" << endl;
+		system("cls");
+		cout << "[ " << turn << "월 ]" << endl;
 		cout << "[ " << monthlyEvent << " ]" << endl << endl;
 
-		cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓" << endl;
-		cout << " 학점\t" << currentState.getGrade() << " \t/ " << MAX_GRADE;
-		cout << " 인기\t" << currentState.getPopularity() << " \t/ " << MAX_POPULARITY;
-		cout << " 인기\t" << currentState.getStress() << " \t/ " << MAX_STRESS;
+		cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓" << endl << endl;
+		cout << " 학점\t\t" << currentState.getGrade() << " \t/ " << MAX_GRADE << endl;
+		cout << " 인기\t\t" << currentState.getPopularity() << " \t/ " << MAX_POPULARITY << endl;
+		cout << " 스트레스\t" << currentState.getStress() << " \t/ " << MAX_STRESS << endl << endl;
 		cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛" << endl << endl;
 
-		cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓";
+		cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓" << endl << endl;
 		printOption(option, num, cursor);
-		cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"; //32칸
+		cout << endl;
+		cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛" << endl; //32칸
 
 	} while (changeCursor(cursor));
 
@@ -65,30 +68,31 @@ int UI::printScript(int turn, string monthlyEvent, State& currentState, vector<s
 } //80칸 영어 80, 한글 40 높이 20줄
 
 // 스크립트 출력
-void UI::printScript(int turn, string monthlyEvent, State& currentState, vector<string>&scriptbox) //대화창 꾸미는거
+void UI::printScript(int turn, string monthlyEvent, State& currentState, vector<string>&script) //대화창 꾸미는거
 {
-	system("cls");
 	// 3줄씩 끊어서 벡터 생성, print로 출력
-	for(int i = 0; i< scriptbox.size();i+=3)
+	for(int i = 0; i< script.size()-1;i+=3)
 	{
-		cout << "[ " << turn + 1 << "월 ]" << endl;
+		system("cls");
+		cout << "[ " << turn << "월 ]" << endl;
 		cout << "[ " << monthlyEvent << " ]" << endl << endl;
 
-		cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓" << endl;
-		cout << " 학점\t" << currentState.getGrade() << " \t/ " << MAX_GRADE;
-		cout << " 인기\t" << currentState.getPopularity() << " \t/ " << MAX_POPULARITY;
-		cout << " 스트레스\t" << currentState.getStress() << " \t/ " << MAX_STRESS;
+		cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓" << endl << endl;
+		cout << " 학점\t\t" << currentState.getGrade() << " \t/ " << MAX_GRADE << endl;
+		cout << " 인기\t\t" << currentState.getPopularity() << " \t/ " << MAX_POPULARITY << endl;
+		cout << " 스트레스\t" << currentState.getStress() << " \t/ " << MAX_STRESS << endl << endl;
 		cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛" << endl << endl;
 
-		cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓" << endl;
+		cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓" << endl << endl;
 
 		vector <string> currentSent;
 		for (int j = 0; j < 3; j++) {
-			currentSent.push_back(scriptbox[i+j]);
+			currentSent.push_back(script[i+j]);
 		}
 
 		print(currentSent);
 
+		cout << endl;
 		cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛" << endl; //32칸
 		
 		//아무키나 입력 들어오면 다음 페이지로
@@ -106,7 +110,7 @@ void UI::print(vector <string>&sentence)
 			cout << endl;
 		}
 		else {
-			cout << sentence[j] << endl;
+			cout << " " << sentence[j] << endl;
 		}
 	}
 	return;

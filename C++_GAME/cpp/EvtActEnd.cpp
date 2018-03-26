@@ -1,4 +1,5 @@
-#include "EvtActEnd.h"
+#pragma once
+#include "headers.h"
 
 using namespace std;
 
@@ -68,6 +69,7 @@ void Event::setEvtScript(string userName) {
 	Fixed5.push_back("끔찍하게도 많이 마셨다. 그리고 졸려서 견딜 수가 없어서 기절했다.");
 	Fixed5.push_back("건강에는 매우 안 좋았지만 선배들과 동기들하고 더욱 돈독한 사이가 되었다.");
 	Fixed5.push_back("");
+	
 	//EvtScript.push_back(Fixed5);
 
 	Fixed61.push_back("중간고사 본 지 얼마나 됐다고 벌써 기말고사지...");
@@ -264,9 +266,11 @@ void Event::setEvtScript(string userName) {
 	Fixed7.push_back("첫 방학을 낭비하지 않기 위해 토익학원을 신청했다.");
 	Fixed7.push_back("건물 밖은 쪄 죽겠고, 안은 에어컨 때문에 온 몸이 얼 것 같은데");
 	Fixed7.push_back("...");
+
 	Fixed7.push_back("취업 스펙을 위해서라도 열심히 해야지.");
 	Fixed7.push_back("그게 아니어도 학교 졸업 때문에라도 필요하니까. ");
 	Fixed7.push_back("파이팅.");
+
 	Fixed7.push_back("한 달 동안 잠시 고딩으로 돌아간 기분으로 살았다. ");
 	Fixed7.push_back("점수가 오른 기분은 드는데 그에 비해 희생된 게 많은 것 같다…");
 	//EvtScript.push_back(Fixed7);
@@ -274,9 +278,11 @@ void Event::setEvtScript(string userName) {
 	Fixed8.push_back("오늘의 일기 날씨 맑음");
 	Fixed8.push_back("오늘은 낙산 엠티를 가는 날이었다.");
 	Fixed8.push_back("다같이 지하철역에 모여서 같이 택시를 타고 갔다.");
+
 	Fixed8.push_back("남자 몇명이 모여서 고기를 굽고,");
 	Fixed8.push_back("나머지는 안에서 김치찌개를 끓였다.");
 	Fixed8.push_back("다 먹고 난 다음에는 술게임을 하였다");
+
 	Fixed8.push_back("참 재밌었다.");
 	Fixed8.push_back("잘 몰랐던 선배들과 동기들과 친해졌다.");
 	//EvtScript.push_back(Fixed8);
@@ -284,9 +290,11 @@ void Event::setEvtScript(string userName) {
 	Fixed9.push_back("벌써 개강이라니");
 	Fixed9.push_back("게다가 첫 수업부터 양봉국 교수님이라니!");
 	Fixed9.push_back("아직 정정 기간인데 가지 말까?");
+
 	Fixed9.push_back("아냐…");
 	Fixed9.push_back("이번 학기 목표는 과탑인걸!");
 	Fixed9.push_back("교수님의 귀염둥이가 되고 말겠어!");
+
 	Fixed9.push_back("어라… 왜 아무도 없지…?");
 	Fixed9.push_back("");
 	Fixed9.push_back("");
@@ -294,6 +302,7 @@ void Event::setEvtScript(string userName) {
 	Fixed9.push_back("양봉국 교수 : 세상에!");
 	Fixed9.push_back("첫날 강의에 학생이 오다니!");
 	Fixed9.push_back("OT 강의에 출석하는 학생은.. 자네가 처음이야!");//양봉국
+
 	Fixed9.push_back("아직 이런 학생이 남아있었다니…");
 	Fixed9.push_back("자네는 A+ 일세!");
 	Fixed9.push_back("");//양봉국
@@ -323,11 +332,14 @@ void Event::setEvtScript(string userName) {
 	Fixed11.push_back("팀플, 그 악명은 입학하기 전부터 들어왔다. ");
 	Fixed11.push_back("하지만 그래도 이상한 사람이 얼마나 되겠어.");
 	Fixed11.push_back("기껏해야 한 과목에 한 둘 정도 아닐까?");
+
 	Fixed11.push_back("…… 모든 팀원들에게서 연락이 되지 않는다. 어째서 바쁜 일이 항상 있지?");
 	Fixed11.push_back("나도 없는 시간을 억지로 만들어 내면서까지 하는데...");
 	Fixed11.push_back("아 너무 힘들다.");
+
 	Fixed11.push_back("결국 자료조사부터 발표까지 나 혼자 하게 되었다.");
 	Fixed11.push_back("이 과목은 말아먹었다. ");
+	Fixed11.push_back("");
 	//EvtScript.push_back(Fixed11);
 
 	Fixed121.push_back("오늘은 크리스마스이다.");
@@ -353,14 +365,20 @@ void Event::setEvtScript(string userName) {
 	Fixed121.push_back("이게 너를 향한 내 마음이야");
 	Fixed121.push_back("다시 한번 사랑해");
 	Fixed121.push_back("...");
+
+	Fixed121.push_back("제작자 :");
+	Fixed121.push_back("손발이...... ");
+	Fixed121.push_back("오그라들었다.....");
 	//EvtScript.push_back(Fixed121);
 
 	Fixed122.push_back("아 절대 오지 않았으면 하는 날이 오고야 말았다..");
 	Fixed122.push_back("크리스마스, 더러운 커플들은 밖에 나가서 데이트를 하겠지");
 	Fixed122.push_back("왜 남의 생일에 데이트를 하는 걸까?");
+
 	Fixed122.push_back("나에겐 남들과는 다른 특별한 할 일이 있다.");
 	Fixed122.push_back("바로 내 친구 케빈을 만나는 것이다.");
 	Fixed122.push_back("혼자여도 씩씩하게 도둑들을 상대하는 케빈을 보니 위로가 되는 것 같다.");
+
 	Fixed122.push_back("내 친구 케빈과 함께 라면 난 외롭지 않아. 절대.");
 	Fixed122.push_back("당신의 의지가 차올랐다.");
 	Fixed122.push_back("");
@@ -382,12 +400,15 @@ void Event::setEvtScript(string userName) {
 	Ran2.push_back("이렇게 있는 것도 지루한데….");
 	Ran2.push_back("동아리 사람들 이랑 카트라이더나 할까??");
 	Ran2.push_back("[시스템] : 윤XX씨, 고 인물씨가 게임 중입니다.");
+
 	Ran2.push_back("아... 하필이면 캡스 대표 고인물 두 명이랑 개인전을!");
 	Ran2.push_back("청정수인 나에겐 너무 가혹한 시련이... 응?");
 	Ran2.push_back("");
+
 	Ran2.push_back("1….1등?!?!?!");
 	Ran2.push_back("내가 1등이라니!!!");
 	Ran2.push_back("연카로 1등이라니!!!");
+
 	Ran2.push_back("드디어 나도... 청정수를 떠나 고인물이 되는 건가!!");
 	Ran2.push_back("고이는 기분이 든다...");
 	Ran2.push_back("스트레스가 사라져간다…");
@@ -416,6 +437,7 @@ void Event::setEvtScript(string userName) {
 	Ran3.push_back("나도 양봉국 교수님 강의 듣는데, 진짜 너무하더라.");
 	Ran3.push_back("가르쳐 주지도 않고 바로 실습 시키는데 질문도 안 받더라.");
 	Ran3.push_back("진짜 개..");
+
 	Ran3.push_back("갑자기 누가 어깨에 손을 얻..?!");
 	Ran3.push_back("아니 교수님이잖아????");
 	Ran3.push_back("");
@@ -436,7 +458,7 @@ bool Event::makeEvt(State& currentState, int turn, int selection, vector<string>
 	int r = rand() % 10;
 	// 어서 하시오!!
 
-	if (turn == 3 && selection == 3)
+	if (turn == 3 && selection == 2)
 	{
 		evtcript = Fixed3;
 		currentState.changePopularity(15);
@@ -445,7 +467,7 @@ bool Event::makeEvt(State& currentState, int turn, int selection, vector<string>
 		return true;
 	}
 
-	if (turn == 4 && selection == 1)
+	if (turn == 4 && selection == 0)
 	{
 		evtcript = Fixed4;
 		currentState.changeGrade(1);
@@ -453,7 +475,7 @@ bool Event::makeEvt(State& currentState, int turn, int selection, vector<string>
 		return true;
 	}
 
-	if (turn == 5 && selection == 3)
+	if (turn == 5 && selection == 2)
 	{
 		evtcript = Fixed5;
 		currentState.changePopularity(15);
@@ -462,35 +484,35 @@ bool Event::makeEvt(State& currentState, int turn, int selection, vector<string>
 		return true;
 	}
 
-	if (turn == 6 && selection == 1 && sum)
+	if (turn == 6 && selection == 0 && sum)
 	{
 		evtcript = Fixed61;
 		currentState.setLove(true);
 		return true;
 	}
 
-	if (turn == 6 && selection == 2)
+	if (turn == 6 && selection == 1)
 	{
 		evtcript = Fixed62;
 		currentState.setLove(true);
 		return true;
 	}
 
-	if (turn == 6 && selection == 3)
+	if (turn == 6 && selection == 2)
 	{
 		evtcript = Fixed63;
 		currentState.setLove(true);
 		return true;
 	}
 
-	if (turn == 7 && selection == 1)
+	if (turn == 7 && selection == 0)
 	{
 		evtcript = Fixed7;
 		currentState.changeGrade(1);
 		return true;
 	}
 
-	if (turn == 8 && selection == 3)
+	if (turn == 8 && selection == 2)
 	{
 		evtcript = Fixed8;
 		currentState.changePopularity(15);
@@ -499,7 +521,7 @@ bool Event::makeEvt(State& currentState, int turn, int selection, vector<string>
 		return true;
 	}
 
-	if (turn == 9 && selection == 1)
+	if (turn == 9 && selection == 0)
 	{
 		evtcript = Fixed9;
 		currentState.changeGrade(1);
@@ -507,14 +529,14 @@ bool Event::makeEvt(State& currentState, int turn, int selection, vector<string>
 		return true;
 	}
 
-	if (turn == 10 && selection == 1 && selection == 2 && selection == 3)
+	if (turn == 10 && selection == 1)
 	{
 		evtcript = Fixed10;
 		currentState.changeStress(-2);
 		return true;
 	}
 
-	if (turn == 11 && selection == 1)
+	if (turn == 11 && selection == 0)
 	{
 		evtcript = Fixed11;
 		currentState.changeGrade(0);
@@ -522,28 +544,28 @@ bool Event::makeEvt(State& currentState, int turn, int selection, vector<string>
 		return true;
 	}
 
-	if (turn == 12 && selection == 1 && selection == 2 && selection == 3 && currentState.getLove() == 1)
+	if (turn == 12 && selection == 2 && currentState.getLove() == 1)
 	{
 		evtcript = Fixed121;
 		currentState.changeStress(-2);
 		return true;
 	}
 
-	if (turn == 12 && selection == 1 && selection == 2 && selection == 3 && currentState.getLove() == 0)
+	if (turn == 12 && selection == 1 && currentState.getLove() == 0)
 	{
 		evtcript = Fixed122;
 		currentState.changeStress(2);
 		return true;
 	}
 
-	else if (selection == 1 && r == 0)
+	else if (selection == 0 && r == 0)
 	{
 		evtcript = Ran1;
 		currentState.changeGrade(1);
 		return true;
 	}
 
-	else if (selection == 2 && r == 0)
+	else if (selection == 1 && r == 0)
 	{
 		evtcript = Ran2;
 		currentState.changeStress(-2);
@@ -551,7 +573,7 @@ bool Event::makeEvt(State& currentState, int turn, int selection, vector<string>
 		return true;
 	}
 
-	else if (selection == 3 && r == 0)
+	else if (selection == 2 && r == 0)
 	{
 		evtcript = Ran3;
 		currentState.changeGrade(-1);
@@ -804,7 +826,6 @@ bool Ending::makeEnding(State& currentState, int selection, vector<string>& endS
 			num++;
 		}
 		score.setScore(currentState, num);
-		currentState.setScore(score.getScore());
 
 		return true;
 	}
@@ -815,7 +836,6 @@ bool Ending::makeEnding(State& currentState, int selection, vector<string>& endS
 			endScript = Nobelprize;
 			Scoring score;
 			score.setScore(currentState, "Nobelprize");
-			currentState.setScore(score.getScore());
 			return true;
 		}
 		else if (celeb && selection == 1)
@@ -823,7 +843,6 @@ bool Ending::makeEnding(State& currentState, int selection, vector<string>& endS
 			endScript = Celeb;
 			Scoring score;
 			score.setScore(currentState, "Celeb");
-			currentState.setScore(score.getScore());
 			return true;
 		}
 		else if (monk && selection == 2)
@@ -831,7 +850,6 @@ bool Ending::makeEnding(State& currentState, int selection, vector<string>& endS
 			endScript = Monk;
 			Scoring score;
 			score.setScore(currentState, "Monk");
-			currentState.setScore(score.getScore());
 			return true;
 		}
 		else if (breaklove)
@@ -839,7 +857,6 @@ bool Ending::makeEnding(State& currentState, int selection, vector<string>& endS
 			endScript = Breaklove;
 			Scoring score;
 			score.setScore(currentState, "Breaklove");
-			currentState.setScore(score.getScore());
 			return true;
 		}
 		else if (manyF)
@@ -847,7 +864,6 @@ bool Ending::makeEnding(State& currentState, int selection, vector<string>& endS
 			endScript = ManyF;
 			Scoring score;
 			score.setScore(currentState, "ManyF");
-			currentState.setScore(score.getScore());
 			return true;
 		}
 		else if (die)
@@ -892,7 +908,6 @@ bool Ending::makeEnding(State& currentState, int selection, vector<string>& endS
 			}
 			Scoring score;
 			score.setScore(currentState, "Die");
-			currentState.setScore(score.getScore());
 			return true;
 		}
 	}
@@ -915,14 +930,14 @@ void Action::setActScript() {
 void Action::makeAction(vector<string>& actScript, int selection, State& currentState)
 {
 	srand(time(NULL));
-	if (selection == 1)		//공부하기
+	if (selection == 0)		//공부하기
 	{
 		actScript = act1;
 		currentState.changeGrade(0.4);
 		currentState.changeStress(1);
 		return;
 	}
-	else if (selection == 2)		//집에서 쉬기
+	else if (selection == 1)		//집에서 쉬기
 	{
 		actScript = act2;
 		currentState.changeStress(-1);

@@ -1,7 +1,6 @@
 #pragma once
-#include "Player.h"
-#include <time.h>
-#include "Ranking.h"
+#include "headers.h"
+
 using namespace std;
 
 #define start turn == 0
@@ -75,7 +74,6 @@ class Ending
 public:
 	void setEndScript(string userName);
 	bool makeEnding(State&  currentState, int selection, vector<string>& endScript, int turn);
-
 };
 
 class Action {
@@ -86,7 +84,6 @@ class Action {
 public:
 	void setActScript();
 	void makeAction(vector<string>& actScript, int selection, State& currentState);
-
 };
 
 

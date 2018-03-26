@@ -1,5 +1,7 @@
-#include "GameManager.h"
-#include "UI.h"
+#pragma once
+#include "headers.h"
+
+using namespace std;
 
 int main() {
 	GameManager GM;

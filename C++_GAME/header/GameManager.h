@@ -1,9 +1,5 @@
 #pragma once
-#include <iostream>
-#include <string>
-#include "EvtActEnd.h"
-#include "Player.h"
-#include "UI.h"
+#include "headers.h"
 #define MAX_TURN 5
 
 class GameManager {
@@ -11,11 +7,12 @@ class GameManager {
 	Event evt;
 	Action act;
 	Ending end;
-
-	vector <string> mentions;
+	Ranking rank;
+	vector <string> setting;
 	vector <string> menuOptions;
 	vector <string> actOptions;
 	vector <string> monthlyEvent;
+	vector <string> opening;
 
 	int turn;
 	bool alive;
