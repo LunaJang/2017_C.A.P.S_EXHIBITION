@@ -32,6 +32,7 @@ public:
 	//Data정렬용 함수
 	bool operator<(Data& a);
 	bool operator>(Data& a);
+	static bool cmp_Data(Data a, Data b);
 };
 
 //랭킹을 위한 클래스

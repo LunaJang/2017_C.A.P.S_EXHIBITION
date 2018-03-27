@@ -20,8 +20,6 @@ public:
 	// GameManager 생성자
 	GameManager();
 
-	// 메뉴 출력
-	void readyGame();
 	// 사용자 이름 및 성별 설정
 	void startGame();
 	// 각 turn 관리
