@@ -286,6 +286,7 @@ void Event::setEvtScript(string userName) {
 
 	Fixed8.push_back("참 재밌었다.");
 	Fixed8.push_back("잘 몰랐던 선배들과 동기들과 친해졌다.");
+	Fixed8.push_back("");
 	//EvtScript.push_back(Fixed8);
 
 	Fixed9.push_back("벌써 개강이라니");
