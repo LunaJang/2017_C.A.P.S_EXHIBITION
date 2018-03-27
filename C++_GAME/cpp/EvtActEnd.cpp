@@ -463,7 +463,7 @@ bool Event::makeEvt(State& currentState, int turn, int selection, vector<string>
 	if (turn == 3 && selection == 2)
 	{
 		evtcript = Fixed3;
-		currentState.changePopularity(Popularityupp);
+		currentState.changePopularity(Popularityup);
 		currentState.changeGrade(Gradedown);
 		currentState.changeLiver(Liverup);
 		return true;
@@ -480,7 +480,7 @@ bool Event::makeEvt(State& currentState, int turn, int selection, vector<string>
 	if (turn == 5 && selection == 2)
 	{
 		evtcript = Fixed5;
-		currentState.changePopularity(Popularityupp);
+		currentState.changePopularity(Popularityup);
 		currentState.changeGrade(Gradedown);
 		currentState.changeLiver(Liverup);
 		return true;
@@ -517,7 +517,7 @@ bool Event::makeEvt(State& currentState, int turn, int selection, vector<string>
 	if (turn == 8 && selection == 2)
 	{
 		evtcript = Fixed8;
-		currentState.changePopularity(Popularityupp);
+		currentState.changePopularity(Popularityup);
 		currentState.changeGrade(Gradedown);
 		currentState.changeLiver(Liverup);
 		return true;
@@ -577,6 +577,7 @@ bool Event::makeEvt(State& currentState, int turn, int selection, vector<string>
 	else if (selection == 2 && r == 0)
 	{
 		evtcript = Ran3;
+		currentState.changePopularity(Popularityup);
 		currentState.changeGrade(Gradedownn);
 		currentState.changeStress(Stressup);
 		currentState.setTr(true);
