@@ -908,7 +908,7 @@ bool Ending::makeEnding(State& currentState, int selection, vector<string>& endS
 		}
 		else if (die)
 		{
-			int a = rand() % 15;
+			int a = rand() % 12;
 			endScript = Die;
 			if (a > 5) {
 				return false;
@@ -972,14 +972,20 @@ void Action::setActScript() {
 	act3.push_back("연락처가 늘어났다!");
 	act3.push_back("아... 내일 강의는 어떻게 하지?");
 }
+
 void Action::makeAction(vector<string>& actScript, int selection, State& currentState)
 {
 	srand(time(NULL));
 	if (selection == 0)		//공부하기
 	{
+		int b = rand() % 9;
 		actScript = act1;
 		currentState.changeGrade(Gradeup);
-		currentState.changeStress(Stressup);
+		currentState.changeStress(Stressup); 
+		if (b > 5)
+		{
+			currentState.changeLiver(Liverup);
+		}
 		return;
 	}
 	else if (selection == 1)		//집에서 쉬기

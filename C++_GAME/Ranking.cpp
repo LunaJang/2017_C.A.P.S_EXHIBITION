@@ -224,7 +224,6 @@ void Ranking::getRank(vector<string>& sRanking, string name, int score)
 		string line;
 		line.append( i + "µî " + dRanking[i].getName() + " " + to_string(dRanking[i].getScore()) + " Á¡ \n");
 		sRanking.push_back(line);
-		cout << line << endl;
 	}
 	return;
 }
