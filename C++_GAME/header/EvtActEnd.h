@@ -8,7 +8,7 @@ using namespace std;
 #define semester2 turn >= 7 && turn <= 10
 #define vacation turn >= 5 && turn <= 6 // ½ÃÁ¡
 
-#define Gradeupp 0.5
+#define Gradeupp 0.7
 #define Gradeup 0.3
 #define Gradedown -0.3
 #define Gradedownn -0.7
@@ -20,8 +20,6 @@ using namespace std;
 #define Popularityup 8
 #define Popularitydown -5
 #define Popularitydownn -10
-#define Liverup 1
-#define Liverdown -1
 
 #define sum  currentState.getPopularity() >= 90 && currentState.getStress() <= 2
 #define lover love == 1
