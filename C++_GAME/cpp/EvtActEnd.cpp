@@ -463,26 +463,26 @@ bool Event::makeEvt(State& currentState, int turn, int selection, vector<string>
 	if (turn == 3 && selection == 2)
 	{
 		evtcript = Fixed3;
-		currentState.changePopularity(15);
-		currentState.changeGrade(-0.3);
-		currentState.changeLiver(1);
+		currentState.changePopularity(Popularityupp);
+		currentState.changeGrade(Gradedown);
+		currentState.changeLiver(Liverup);
 		return true;
 	}
 
 	if (turn == 4 && selection == 0)
 	{
 		evtcript = Fixed4;
-		currentState.changeGrade(1);
-		currentState.changeStress(1);
+		currentState.changeGrade(Gradeupp);
+		currentState.changeStress(Stressup);
 		return true;
 	}
 
 	if (turn == 5 && selection == 2)
 	{
 		evtcript = Fixed5;
-		currentState.changePopularity(15);
-		currentState.changeGrade(-0.3);
-		currentState.changeLiver(1);
+		currentState.changePopularity(Popularityupp);
+		currentState.changeGrade(Gradedown);
+		currentState.changeLiver(Liverup);
 		return true;
 	}
 
@@ -510,67 +510,66 @@ bool Event::makeEvt(State& currentState, int turn, int selection, vector<string>
 	if (turn == 7 && selection == 0)
 	{
 		evtcript = Fixed7;
-		currentState.changeGrade(1);
+		currentState.changeGrade(Gradeupp);
 		return true;
 	}
 
 	if (turn == 8 && selection == 2)
 	{
 		evtcript = Fixed8;
-		currentState.changePopularity(15);
-		currentState.changeGrade(-0.3);
-		currentState.changeLiver(1);
+		currentState.changePopularity(Popularityupp);
+		currentState.changeGrade(Gradedown);
+		currentState.changeLiver(Liverup);
 		return true;
 	}
 
 	if (turn == 9 && selection == 0)
 	{
 		evtcript = Fixed9;
-		currentState.changeGrade(1);
-		currentState.changeStress(1);
+		currentState.changeGrade(Gradeupp);
+		currentState.changeStress(Stressup);
 		return true;
 	}
 
 	if (turn == 10 && selection == 1)
 	{
 		evtcript = Fixed10;
-		currentState.changeStress(-2);
+		currentState.changeStress(Stressdownn);
 		return true;
 	}
 
 	if (turn == 11 && selection == 0)
 	{
 		evtcript = Fixed11;
-		currentState.changeGrade(0);
-		currentState.changeStress(2);
+		currentState.changeStress(Stressupp);
 		return true;
 	}
 
 	if (turn == 12 && currentState.getLove() == 1)
 	{
 		evtcript = Fixed121;
-		currentState.changeStress(-2);
+		currentState.changeStress(Stressdownn);
 		return true;
 	}
 
 	if (turn == 12 && selection == 1 && currentState.getLove() == 0)
 	{
 		evtcript = Fixed122;
-		currentState.changeStress(2);
+		currentState.changeStress(Stressupp);
 		return true;
 	}
 
 	else if (selection == 0 && r == 0)
 	{
 		evtcript = Ran1;
-		currentState.changeGrade(1);
+		currentState.changeGrade(Gradeupp);
 		return true;
 	}
 
 	else if (selection == 1 && r == 0)
 	{
 		evtcript = Ran2;
-		currentState.changeStress(-2);
+		currentState.changeStress(Stressdownn);
 
 		return true;
 	}
@@ -578,8 +577,8 @@ bool Event::makeEvt(State& currentState, int turn, int selection, vector<string>
 	else if (selection == 2 && r == 0)
 	{
 		evtcript = Ran3;
-		currentState.changeGrade(-1);
-		currentState.changeStress(1);
+		currentState.changeGrade(Gradedownn);
+		currentState.changeStress(Stressup);
 		currentState.setTr(true);
 		return true;
 	}
@@ -774,10 +773,10 @@ bool Ending::makeEnding(State& currentState, int selection, vector<string>& endS
 {
 	srand(time(NULL));
 	// 완결 엔딩
-	if (turn == 10)
+	if (turn == 12)
 	{
 		Scoring score;
-		int num;
+		int num = 0;
 		endScript = Nomal;
 
 		if (currentState.getPopularity() < 20)
@@ -979,27 +978,27 @@ void Action::makeAction(vector<string>& actScript, int selection, State& current
 	if (selection == 0)		//공부하기
 	{
 		actScript = act1;
-		currentState.changeGrade(0.4);
-		currentState.changeStress(1);
+		currentState.changeGrade(Gradeup);
+		currentState.changeStress(Stressup);
 		return;
 	}
 	else if (selection == 1)		//집에서 쉬기
 	{
 		actScript = act2;
-		currentState.changeStress(-1);
-		currentState.changePopularity(-8);
-		currentState.changeLiver(-1);
+		currentState.changeStress(Stressdown);
+		currentState.changePopularity(Popularitydown);
+		currentState.changeLiver(Liverdown);
 		return;
 	}
 	else		//친구들과 놀기
 	{
 		int b = rand() % 9;
 		actScript = act3;
-		currentState.changePopularity(10);
-		currentState.changeGrade(-0.3);
+		currentState.changePopularity(Popularityup);
+		currentState.changeGrade(Gradedown);
 		if (b > 5)
 		{
-			currentState.changeLiver(1);
+			currentState.changeLiver(Liverup);
 		}
 		return;
 	}

@@ -8,6 +8,19 @@ using namespace std;
 #define semester2 turn >= 7 && turn <= 10
 #define vacation turn >= 5 && turn <= 6 // 시점
 
+#define Gradeupp 0.7
+#define Gradeup 0.3
+#define Gradedown -0.3
+#define Gradedownn -0.7
+#define Stressupp 2
+#define Stressup 1
+#define Stressdown -1
+#define Stressdownn -2
+#define Popularityupp 13
+#define Popularityup 8
+#define Popularitydown -5
+#define Popularitydownn -10
+
 #define sum  currentState.getPopularity() >= 90 && currentState.getStress() <= 2
 #define lover love == 1
 #define freedom currentState.getStress() <= 2
@@ -25,7 +38,7 @@ using namespace std;
 
 #define donghwan special == true // 동환이벤트
 
-#define END_CNT_MAX 5
+#define END_CNT_MAX 3
 
 class Event {
 	//bool evtact; // 실행여부
