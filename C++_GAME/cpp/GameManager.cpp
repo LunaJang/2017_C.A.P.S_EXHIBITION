@@ -49,7 +49,7 @@ void GameManager::startGame() {
 		UI::print(setting[0]); 
 		cin >> newName;
 	} while (newName == "" || newName.size() > 6);
-	user.setName(newName);
+	user.setName(" " + newName + " ");
 
 	evt.setEvtScript(user.getName());
 	end.setEndScript(user.getName());
@@ -76,16 +76,16 @@ void GameManager::playGame() {
 
 		//이벤트 처리
 		vector<string> evtScript;
-		evtScript.clear();
+		//evtScript.clear();
 		if (evt.makeEvt(user.getCurrentState(), turn, selection, evtScript)) {
 			UI::printScript(turn, monthlyEvent[turn], user.getCurrentState(), evtScript);
 		}
 
 		//엔딩 체크
 		vector<string> endScript;
-		endScript.clear();
+		//endScript.clear();
 		if (end.makeEnding(user.getCurrentState(), selection, endScript, turn)) {
-			UI::printScript(turn, monthlyEvent[turn], user.getCurrentState(), evtScript);
+			UI::printScript(turn, monthlyEvent[turn], user.getCurrentState(), endScript);
 			alive = false;
 		}
 	}

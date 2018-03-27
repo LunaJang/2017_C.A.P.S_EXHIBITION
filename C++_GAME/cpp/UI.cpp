@@ -70,8 +70,9 @@ int UI::printScript(int turn, string monthlyEvent, State& currentState, vector<s
 // 스크립트 출력
 void UI::printScript(int turn, string monthlyEvent, State& currentState, vector<string>&script) //대화창 꾸미는거
 {
+	int cnt = 0;
 	// 3줄씩 끊어서 벡터 생성, print로 출력
-	for(int i = 0; i< script.size()-1;i+=3)
+	for(int i = 0; i< script.size();i+=3)
 	{
 		system("cls");
 		cout << "[ " << turn << "월 ]" << endl;
@@ -87,7 +88,9 @@ void UI::printScript(int turn, string monthlyEvent, State& currentState, vector<
 
 		vector <string> currentSent;
 		for (int j = 0; j < 3; j++) {
-			currentSent.push_back(script[i+j]);
+			cnt = i + j;
+			currentSent.push_back( script[cnt]);
+			cnt++;
 		}
 
 		print(currentSent);

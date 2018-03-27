@@ -217,7 +217,7 @@ void Ranking::getRank(vector<string>& sRanking, string name, int score)
 	for (int i = 1; i <= dRanking.size(); ++i)
 	{
 		string line;
-		line.append( i + "µî " + dRanking[i].getName() + "\n" + to_string(dRanking[i].getScore()) + "\n");
+		line.append( i + "µî " + dRanking[i-1].getName() + "\n" + to_string(dRanking[i-1].getScore()) + "\n");
 		sRanking.push_back(line);
 	}
 	return;
