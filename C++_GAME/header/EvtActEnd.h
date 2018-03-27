@@ -16,11 +16,14 @@ using namespace std;
 #define Stressup 1
 #define Stressdown -1
 #define Stressdownn -2
-#define Popularityup 5
+#define Popularityupp 13
+#define Popularityup 8
 #define Popularitydown -5
 #define Popularitydownn -10
+#define Liverup 1
+#define Liverdown -1
 
-#define sum  currentState.getPopularity() >= 80 && currentState.getStress() <= 0
+#define sum  currentState.getPopularity() >= 90 && currentState.getStress() <= 2
 #define lover love == 1
 #define freedom currentState.getStress() <= 2
 #define first currentState.getGrade() >= 4.3 && currentState.getGrade() < 4.5 && currentState.getStress() == 3 && currentState.getStress() == 4

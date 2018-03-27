@@ -1,6 +1,6 @@
 #pragma once
 #include "headers.h"
-#define MAX_TURN 13
+#define MAX_TURN 15
 
 class GameManager {
 	Player user;

@@ -84,7 +84,7 @@ void GameManager::playGame() {
 		vector<string> endScript;
 		//endScript.clear();
 		if (end.makeEnding(user.getCurrentState(), selection, endScript, turn)) {
-			UI::printScript(turn, monthlyEvent[turn], user.getCurrentState(), endScript);
+			UI::printScript(turn, "¿£µù", user.getCurrentState(), endScript);
 			alive = false;
 		}
 	}

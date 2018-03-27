@@ -145,8 +145,6 @@ void Scoring::setScore(State& currentState, int endNum)
 	currentState.setScore(score);
 }
 
-
-
 Data::Data(string name, int score)
 {
 	this->name = name;
@@ -169,43 +167,32 @@ bool Data::operator>(Data& a) {
 
 void Ranking::readRank(vector<Data>& dRanking)
 {
-	ifstream in;
-	in.open("rank.txt");
+	ifstream readFile("rank.txt");
 	string iname;
 	string iscore;
-	int count = 1;
-	dRanking.clear();
 
-	if (in.is_open())
+	if (readFile.is_open())
 	{
-		while (!in.eof())
+		while (!readFile.eof())
 		{
-			if (count % 2 == 1)
-			{
-				getline(in, iname);
-				count++;
-			}
-			else
-			{
-				getline(in, iscore);
-				count++;
-				Data info(iname, stoi(iscore));
-				dRanking.push_back(info);
-			}
+			getline(readFile, iname);
+			getline(readFile, iscore);
+			Data info(iname, stoi(iscore));
+			dRanking.push_back(info);
 		}
+		readFile.close();
 	}
 }
-
 void Ranking::writeRank(vector<Data>& dRanking)
 {
-	ofstream out;
-	out.open("rank.txt");
-	if (out.is_open())
+	ofstream writeFile("rank.txt");
+	if (writeFile.is_open())
 		for (int i = 0; i < dRanking.size(); i++)
-			out << dRanking[i].getName() << endl << dRanking[i].getScore() << endl;
+			writeFile << dRanking[i].getName() << endl << dRanking[i].getScore() << endl;
+	writeFile.close();
+
 
 }
-
 void Ranking::getRank(vector<string>& sRanking, string name, int score)
 {
 	vector<Data> dRanking;
@@ -213,6 +200,7 @@ void Ranking::getRank(vector<string>& sRanking, string name, int score)
 	Data UserInfo(name, score);
 	dRanking.push_back(UserInfo);
 	sort(dRanking.begin(), dRanking.end());
+	writeRank(dRanking);
 
 	for (int i = 1; i <= dRanking.size(); ++i)
 	{
@@ -222,7 +210,6 @@ void Ranking::getRank(vector<string>& sRanking, string name, int score)
 	}
 	return;
 }
-
 void Ranking::getRank(vector<string>& sRanking)
 {
 	vector<Data> dRanking;

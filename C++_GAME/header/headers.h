@@ -12,3 +12,5 @@
 #include "EvtActEnd.h"
 #include "UI.h"
 #include "GameManager.h"
+
+using namespace std;
