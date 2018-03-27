@@ -175,15 +175,24 @@ void Ranking::readRank(vector<Data>& dRanking)
 	ifstream readFile("rank.txt");
 	string iname;
 	string iscore;
+	int count = 1;
 
 	if (readFile.is_open())
 	{
 		while (!readFile.eof())
 		{
-			getline(readFile, iname);
-			getline(readFile, iscore);
-			Data info(iname, stoi(iscore));
-			dRanking.push_back(info);
+			if (count % 2 == 1)
+			{
+				getline(readFile, iname);
+				count++;
+			}
+			else
+			{
+				getline(readFile, iscore);
+				count++;
+				Data info(iname, stoi(iscore));
+				dRanking.push_back(info);
+			}
 		}
 		readFile.close();
 	}
@@ -216,19 +225,6 @@ void Ranking::getRank(vector<string>& sRanking, string name, int score)
 		line.append( i + "µî " + dRanking[i].getName() + " " + to_string(dRanking[i].getScore()) + " Á¡ \n");
 		sRanking.push_back(line);
 		cout << line << endl;
-	}
-	return;
-}
-void Ranking::getRank(vector<string>& sRanking)
-{
-	vector<Data> dRanking;
-	readRank(dRanking);
-
-	for (int i = 1; i <= dRanking.size(); ++i)
-	{
-		string line;
-		line.append(i + "µî " + dRanking[i].getName() + " " + to_string(dRanking[i].getScore()) + "\n");
-		sRanking.push_back(line);
 	}
 	return;
 }
