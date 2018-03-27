@@ -41,7 +41,6 @@ void GameManager::readyGame() {
 void GameManager::startGame() {
 	string sentence;
 	string newName;
-	bool newGender;
 
 	turn = 2;
 

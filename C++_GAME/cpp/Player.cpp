@@ -45,7 +45,7 @@ void State::changeGrade(double amount)
 	{
 		this->grade = MAX_GRADE;
 	}
-	else if (amount < 0 && (this->grade - amount) < MIN_GRADE)
+	else if (amount < 0 && (this->grade + amount) < MIN_GRADE)
 	{
 		this->grade = MIN_GRADE;
 	}
@@ -61,7 +61,7 @@ void State::changePopularity(int amount)
 	{
 		this->popularity = MAX_POPULARITY;
 	}
-	else if (amount < 0 && (this->popularity - amount) < MIN_POPULARITY)
+	else if (amount < 0 && (this->popularity + amount) < MIN_POPULARITY)
 	{
 		this->popularity = MIN_POPULARITY;
 	}
@@ -78,7 +78,7 @@ void State::changeStress(int amount)
 	{
 		this->stress = MAX_STRESS;
 	}
-	else if (amount < 0 && (this->stress - amount) < MIN_STRESS)
+	else if (amount < 0 && (this->stress + amount) < MIN_STRESS)
 	{
 		this->stress = MIN_STRESS;
 	}

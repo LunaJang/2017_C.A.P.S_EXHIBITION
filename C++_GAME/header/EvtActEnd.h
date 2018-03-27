@@ -8,7 +8,7 @@ using namespace std;
 #define semester2 turn >= 7 && turn <= 10
 #define vacation turn >= 5 && turn <= 6 // 시점
 
-#define sum  currentState.getPopularity() == 90 && currentState.getStress() <= 2
+#define sum  currentState.getPopularity() >= 90 && currentState.getStress() <= 2
 #define lover love == 1
 #define freedom currentState.getStress() <= 2
 #define first currentState.getGrade() >= 4.3 && currentState.getGrade() < 4.5 && currentState.getStress() == 3 && currentState.getStress() == 4
@@ -24,6 +24,8 @@ using namespace std;
 #define die currentState.getStress() + currentState.getLiver() >= 8// 충족 되어도 랜덤값 충족해야 엔딩
 
 #define donghwan special == true // 동환이벤트
+
+#define END_CNT_MAX 5
 
 class Event {
 	//bool evtact; // 실행여부
@@ -71,6 +73,13 @@ class Ending
 	vector <string> Peace;
 	vector <string> Tr;
 	vector <string> Nomal;
+
+	int nobelCnt;
+	int celebCnt;
+	int monkCnt;
+	int breakCnt;
+	int manyFCnt;
+
 public:
 	void setEndScript(string userName);
 	bool makeEnding(State&  currentState, int selection, vector<string>& endScript, int turn);

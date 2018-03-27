@@ -22,8 +22,6 @@ using namespace std;
 
 #define DEFAULT_TR false
 
-#define DEFAULT_NAME seong
-
 #define DEFAULT_SCORE 0
 
 class State {

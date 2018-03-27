@@ -273,6 +273,7 @@ void Event::setEvtScript(string userName) {
 
 	Fixed7.push_back("한 달 동안 잠시 고딩으로 돌아간 기분으로 살았다. ");
 	Fixed7.push_back("점수가 오른 기분은 드는데 그에 비해 희생된 게 많은 것 같다…");
+	Fixed7.push_back("");
 	//EvtScript.push_back(Fixed7);
 
 	Fixed8.push_back("오늘의 일기 날씨 맑음");
@@ -491,14 +492,14 @@ bool Event::makeEvt(State& currentState, int turn, int selection, vector<string>
 		return true;
 	}
 
-	if (turn == 6 && selection == 1)
+	if (turn == 6 && selection == 1 && sum)
 	{
 		evtcript = Fixed62;
 		currentState.setLove(true);
 		return true;
 	}
 
-	if (turn == 6 && selection == 2)
+	if (turn == 6 && selection == 2 && sum)
 	{
 		evtcript = Fixed63;
 		currentState.setLove(true);
@@ -581,10 +582,18 @@ bool Event::makeEvt(State& currentState, int turn, int selection, vector<string>
 		currentState.setTr(true);
 		return true;
 	}
+	else {
+		return false;
+	}
 }
 
 void Ending::setEndScript(string userName) {
 
+	nobelCnt = 0;
+	celebCnt = 0;
+	monkCnt = 0;
+	breakCnt = 0;
+	manyFCnt = 0;
 
 	Monk.push_back("이불 속에 있으니");			//스크립트 넣기 0번 스님
 	Monk.push_back("내 마음 속의 번뇌가 사라져 간다.");
@@ -769,6 +778,7 @@ bool Ending::makeEnding(State& currentState, int selection, vector<string>& endS
 		Scoring score;
 		int num;
 		endScript = Nomal;
+
 		if (currentState.getPopularity() < 20)
 		{
 			endScript.push_back(Outside[0]);
@@ -833,82 +843,117 @@ bool Ending::makeEnding(State& currentState, int selection, vector<string>& endS
 	else {
 		if (nobelprize && selection == 0)
 		{
-			endScript = Nobelprize;
-			Scoring score;
-			score.setScore(currentState, "Nobelprize");
-			return true;
+			nobelCnt++;
+			if (nobelCnt == END_CNT_MAX) {
+				endScript = Nobelprize;
+				Scoring score;
+				score.setScore(currentState, "Nobelprize");
+				return true;
+			}
+			else {
+				return false;
+			}
 		}
-		else if (celeb && selection == 1)
+		else if (celeb && selection == 2)
 		{
-			endScript = Celeb;
-			Scoring score;
-			score.setScore(currentState, "Celeb");
-			return true;
+			celebCnt++;
+			if (celebCnt == END_CNT_MAX) {
+				endScript = Celeb;
+				Scoring score;
+				score.setScore(currentState, "Celeb");
+				return true;
+			}
+			else {
+				return false;
+			}
 		}
-		else if (monk && selection == 2)
+		else if (monk && selection == 1)
 		{
-			endScript = Monk;
-			Scoring score;
-			score.setScore(currentState, "Monk");
-			return true;
+			monkCnt++;
+			if (monkCnt == END_CNT_MAX) {
+				endScript = Monk;
+				Scoring score;
+				score.setScore(currentState, "Monk");
+				return true;
+			}
+			else {
+				return false;
+			}
 		}
 		else if (breaklove)
 		{
-			endScript = Breaklove;
-			Scoring score;
-			score.setScore(currentState, "Breaklove");
-			return true;
+			breakCnt;
+			if (breakCnt == END_CNT_MAX) {
+				endScript = Breaklove;
+				Scoring score;
+				score.setScore(currentState, "Breaklove");
+				return true;
+			}
+			else {
+				return false;
+			}
 		}
 		else if (manyF)
 		{
-			endScript = ManyF;
-			Scoring score;
-			score.setScore(currentState, "ManyF");
-			return true;
+			manyFCnt++;
+			if (manyFCnt == END_CNT_MAX) {
+				endScript = ManyF;
+				Scoring score;
+				score.setScore(currentState, "ManyF");
+				return true;
+			}
+			else {
+				return false;
+			}
 		}
 		else if (die)
 		{
-			int a = rand() % 6;
+			int a = rand() % 15;
 			endScript = Die;
-			if (a == 0)
-			{
-				endScript.push_back("학교 가기 싫어 사망");
-				endScript.push_back("");
-				endScript.push_back("");
+			if (a > 5) {
+				return false;
 			}
-			else if (a == 1)
-			{
-				endScript.push_back("소주병에 손가락이 찔려 사망");
-				endScript.push_back("");
-				endScript.push_back("");
+			else {
+				if (a == 0)
+				{
+					endScript.push_back("학교 가기 싫어 사망");
+					endScript.push_back("");
+					endScript.push_back("");
+				}
+				else if (a == 1)
+				{
+					endScript.push_back("소주병에 손가락이 찔려 사망");
+					endScript.push_back("");
+					endScript.push_back("");
+				}
+				else if (a == 2)
+				{
+					endScript.push_back("암세포가 암에 걸려 사망");
+					endScript.push_back("");
+					endScript.push_back("");
+				}
+				else if (a == 3)
+				{
+					endScript.push_back("한조를 픽해 사망");
+					endScript.push_back("");
+					endScript.push_back("");
+				}
+				else if (a == 4)
+				{
+					endScript.push_back("친구가 없어 사망");
+					endScript.push_back("");
+					endScript.push_back("");
+				}
+				else if (a == 5)
+				{
+					endScript.push_back("이불 밖으로 나와 사망");
+					endScript.push_back("");
+					endScript.push_back("");
+				}
+				Scoring score;
+				score.setScore(currentState, "Die");
+				return true;
 			}
-			else if (a == 2)
-			{
-				endScript.push_back("암세포가 암에 걸려 사망");
-				endScript.push_back("");
-				endScript.push_back("");
-			}
-			else if (a == 3)
-			{
-				endScript.push_back("한조를 픽해 사망");
-				endScript.push_back("");
-				endScript.push_back("");
-			}
-			else if (a == 4)
-			{
-				endScript.push_back("친구가 없어 사망");
-				endScript.push_back("");
-				endScript.push_back("");				
-			}
-			else
-			{
-				endScript.push_back("이불 밖으로 나와 사망");
-				endScript.push_back("");
-				endScript.push_back("");				
-			}
-			Scoring score;
-			score.setScore(currentState, "Die");
-			return true;
 		}
 	}
 	return false;
@@ -942,6 +987,7 @@ void Action::makeAction(vector<string>& actScript, int selection, State& current
 		actScript = act2;
 		currentState.changeStress(-1);
 		currentState.changePopularity(-8);
+		currentState.changeLiver(-1);
 		return;
 	}
 	else		//친구들과 놀기
