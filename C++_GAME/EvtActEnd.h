@@ -28,7 +28,7 @@ using namespace std;
 #define president currentState.getPopularity() == 100
 #define nobelprize currentState.getGrade() == 4.5 && currentState.getStress() <= 2
 #define manyF currentState.getGrade() <= 1.7
-#define breaklove currentState.getLove() == 1 && currentState.getPopularity() <=  // 엔딩(한번이라도 충족되면 엔딩)
+#define breaklove currentState.getLove() == 1 && currentState.getPopularity() <= 50 // 엔딩(한번이라도 충족되면 엔딩)
 
 #define die currentState.getStress() + currentState.getLiver() >= 8// 충족 되어도 랜덤값 충족해야 엔딩
 
