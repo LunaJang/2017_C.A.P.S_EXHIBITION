@@ -542,6 +542,7 @@ bool Event::makeEvt(State& currentState, int turn, int selection, vector<string>
 	{
 		evtcript = Fixed11;
 		currentState.changeStress(Stressup);
+		currentState.changePopularity(Popularitydown);
 		return true;
 	}
 
@@ -570,7 +571,6 @@ bool Event::makeEvt(State& currentState, int turn, int selection, vector<string>
 	{
 		evtcript = Ran2;
 		currentState.changeStress(Stressdown);
-
 		return true;
 	}
 
@@ -579,10 +579,12 @@ bool Event::makeEvt(State& currentState, int turn, int selection, vector<string>
 		evtcript = Ran3;
 		currentState.changeGrade(Gradedown);
 		currentState.changeStress(Stressup);
+		currentState.changePopularity(Popularitydown);
 		currentState.setTr(true);
 		return true;
 	}
-	else {
+	else 
+	{
 		return false;
 	}
 }
