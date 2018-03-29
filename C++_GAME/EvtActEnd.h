@@ -8,18 +8,12 @@ using namespace std;
 #define semester2 turn >= 7 && turn <= 10
 #define vacation turn >= 5 && turn <= 6 // 시점
 
-#define Gradeupp 0.7
 #define Gradeup 0.3
 #define Gradedown -0.3
-#define Gradedownn -0.7
-#define Stressupp 2
 #define Stressup 1
 #define Stressdown -1
-#define Stressdownn -2
-#define Popularityupp 13
 #define Popularityup 8
 #define Popularitydown -5
-#define Popularitydownn -10
 #define Liverup 1
 #define Liverdown -1
 
@@ -32,7 +26,7 @@ using namespace std;
 
 #define monk currentState.getStress() == 0
 #define president currentState.getPopularity() == 100
-#define nobelprize currentState.getGrade() == 4.5
+#define nobelprize currentState.getGrade() == 4.5 && currentState.getStress() <= 2
 #define manyF currentState.getGrade() <= 1.7
 #define breaklove currentState.getLove() == 1 && currentState.getPopularity() <= 20 // 엔딩(한번이라도 충족되면 엔딩)
 

@@ -463,7 +463,7 @@ bool Event::makeEvt(State& currentState, int turn, int selection, vector<string>
 	if (turn == 3 && selection == 2)
 	{
 		evtcript = Fixed3;
-		currentState.changePopularity(Popularityupp);
+		currentState.changePopularity(Popularityup);
 		currentState.changeGrade(Gradedown);
 		currentState.changeLiver(Liverup);
 		return true;
@@ -472,7 +472,7 @@ bool Event::makeEvt(State& currentState, int turn, int selection, vector<string>
 	if (turn == 4 && selection == 0)
 	{
 		evtcript = Fixed4;
-		currentState.changeGrade(Gradeupp);
+		currentState.changeGrade(Gradeup);
 		currentState.changeStress(Stressup);
 		return true;
 	}
@@ -480,7 +480,7 @@ bool Event::makeEvt(State& currentState, int turn, int selection, vector<string>
 	if (turn == 5 && selection == 2)
 	{
 		evtcript = Fixed5;
-		currentState.changePopularity(Popularityupp);
+		currentState.changePopularity(Popularityup);
 		currentState.changeGrade(Gradedown);
 		currentState.changeLiver(Liverup);
 		return true;
@@ -510,14 +510,14 @@ bool Event::makeEvt(State& currentState, int turn, int selection, vector<string>
 	if (turn == 7 && selection == 0)
 	{
 		evtcript = Fixed7;
-		currentState.changeGrade(Gradeupp);
+		currentState.changeGrade(Gradeup);
 		return true;
 	}
 
 	if (turn == 8 && selection == 2)
 	{
 		evtcript = Fixed8;
-		currentState.changePopularity(Popularityupp);
+		currentState.changePopularity(Popularityup);
 		currentState.changeGrade(Gradedown);
 		currentState.changeLiver(Liverup);
 		return true;
@@ -526,7 +526,7 @@ bool Event::makeEvt(State& currentState, int turn, int selection, vector<string>
 	if (turn == 9 && selection == 0)
 	{
 		evtcript = Fixed9;
-		currentState.changeGrade(Gradeupp);
+		currentState.changeGrade(Gradeup);
 		currentState.changeStress(Stressup);
 		return true;
 	}
@@ -534,42 +534,42 @@ bool Event::makeEvt(State& currentState, int turn, int selection, vector<string>
 	if (turn == 10 && selection == 1)
 	{
 		evtcript = Fixed10;
-		currentState.changeStress(Stressdownn);
+		currentState.changeStress(Stressdown);
 		return true;
 	}
 
 	if (turn == 11 && selection == 0)
 	{
 		evtcript = Fixed11;
-		currentState.changeStress(Stressupp);
+		currentState.changeStress(Stressup);
 		return true;
 	}
 
 	if (turn == 12 && currentState.getLove() == 1)
 	{
 		evtcript = Fixed121;
-		currentState.changeStress(Stressdownn);
+		currentState.changeStress(Stressdown);
 		return true;
 	}
 
 	if (turn == 12 && selection == 1 && currentState.getLove() == 0)
 	{
 		evtcript = Fixed122;
-		currentState.changeStress(Stressupp);
+		currentState.changeStress(Stressup);
 		return true;
 	}
 
 	else if (selection == 0 && r == 0)
 	{
 		evtcript = Ran1;
-		currentState.changeGrade(Gradeupp);
+		currentState.changeGrade(Gradeup);
 		return true;
 	}
 
 	else if (selection == 1 && r == 0)
 	{
 		evtcript = Ran2;
-		currentState.changeStress(Stressdownn);
+		currentState.changeStress(Stressdown);
 
 		return true;
 	}
@@ -577,7 +577,7 @@ bool Event::makeEvt(State& currentState, int turn, int selection, vector<string>
 	else if (selection == 2 && r == 0)
 	{
 		evtcript = Ran3;
-		currentState.changeGrade(Gradedownn);
+		currentState.changeGrade(Gradedown);
 		currentState.changeStress(Stressup);
 		currentState.setTr(true);
 		return true;
